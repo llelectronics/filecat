@@ -32,11 +32,6 @@ int main(int argc, char *argv[])
     QQuickView *view = SailfishApp::createView();
     view->setResizeMode(QQuickView::SizeRootObjectToView);
 
-    view->engine()->rootContext()->setContextProperty("_fm", nullptr);
-    view->engine()->rootContext()->setContextProperty("_videoHelper", nullptr);
-
-    view->setSource(SailfishApp::pathTo("qml/harbour-filecat.qml"));
-
     //QObject *object = view->rootObject(); // unused for now
 
     videoHelper *vHelper = new videoHelper();
@@ -44,6 +39,8 @@ int main(int argc, char *argv[])
 
     FM *fileAction = new FM();
     view->engine()->rootContext()->setContextProperty("_fm", fileAction);
+
+    view->setSource(SailfishApp::pathTo("qml/harbour-filecat.qml"));
 
     view->showFullScreen();
 
