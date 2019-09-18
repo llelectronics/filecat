@@ -7,7 +7,7 @@ ApplicationWindow
     id: mainWindow
 
     initialPage: Component { OpenDialog { } }
-    cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    cover: undefined
     allowedOrientations: defaultAllowedOrientations
 
     property alias infoBanner: infoBanner
