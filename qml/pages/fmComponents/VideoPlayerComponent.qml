@@ -562,7 +562,6 @@ Item {
             if (mediaPlayer.status === MediaPlayer.Loading || mediaPlayer.status === MediaPlayer.Buffering || mediaPlayer.status === MediaPlayer.Stalled) progressCircle.visible = true;
             else if (mediaPlayer.status === MediaPlayer.EndOfMedia) videoPoster.showControls();
             else  { progressCircle.visible = false; }
-            if (metaData.title) dPage.title = metaData.title
         }
         onError: {
             // Just a little help
