@@ -320,5 +320,13 @@ The video cannot be played due to insufficient permissions.</source>
 The video cannot be played because the media service could not be instantiated.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
