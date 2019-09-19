@@ -598,14 +598,14 @@ Item {
             id: dur
             text: videoDuration
             anchors.left: curPos.right
-            color: Theme.highlightColor
+            color: Theme.primaryColor
             font.pixelSize: Theme.fontSizeHuge
             font.bold: true
         }
         Label {
             id: curPos
             text: videoPosition + " / "
-            color: Theme.highlightColor
+            color: Theme.primaryColor
             font.pixelSize: Theme.fontSizeHuge
             font.bold: true
         }

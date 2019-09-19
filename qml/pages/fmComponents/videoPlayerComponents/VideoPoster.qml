@@ -269,6 +269,13 @@ MouseArea {
                         //videoItem.player.pause()
                     }
                 }
+                onDownChanged: {
+                    if (down) {
+                        coverTime.visible = true
+                    }
+                    else
+                        coverTime.fadeOut.start()
+                }
             }
         }
         Row {
