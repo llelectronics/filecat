@@ -21,7 +21,7 @@ Page {
             MenuItem {
                 id: fOpen
                 text: qsTr("Open File")
-                onClicked: pageStack.replace(Qt.resolvedUrl("OpenDialog.qml"), { dataContainer: dataContainer })
+                onClicked: pageStack.replace(Qt.resolvedUrl("../OpenDialog.qml"), { dataContainer: dataContainer })
             }
             MenuItem {
                 id: uOpen
