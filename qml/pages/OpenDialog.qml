@@ -256,7 +256,7 @@ Page {
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("fmComponents/FileProperties.qml"),
                                           {"path": findFullPath(fileModel.folder), dataContainer: dataContainer, "fileIcon": "image://theme/icon-m-folder", "fileSize": "4k",
-                                           "fileModified": fileModel.fileModified.toLocaleString(), "fileIsDir": true, "father": page})
+                                           "fileModified": fileModel.fileModified, "fileIsDir": true, "father": page})
                     //console.debug("Path: " + findFullPath(fileModel.folder))
                 }
             }
