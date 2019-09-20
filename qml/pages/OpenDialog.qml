@@ -168,6 +168,7 @@ Page {
                         view.model.showHidden = false
                     }
                     hiddenShow = !hiddenShow
+                    showHiddenIndicator.start()
                 }
             }
         }
@@ -435,6 +436,51 @@ Page {
         anchors.topMargin: Theme.paddingLarge
         anchors.left: parent.left
         anchors.leftMargin: Theme.paddingLarge
+    }
+
+    Item {
+        id: hiddenIndicator
+
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: 4 * Theme.paddingLarge
+        opacity: 0
+
+        NumberAnimation on opacity { duration: 500 }
+
+        Rectangle {
+            width: hiddenblIndicator.width + 2 * Theme.paddingMedium
+            height: hiddenblIndicator.height + 2 * Theme.paddingMedium
+            color: isLightTheme? "white" : "black"
+            opacity: 0.4
+            anchors.centerIn: parent
+
+        }
+        Label {
+            id: hiddenblIndicator
+            font.pixelSize: Theme.fontSizeSmall
+            anchors.centerIn: parent
+            text: hiddenShow ? qsTr("Show hidden files") : qsTr("Hide hidden files")
+            color: Theme.primaryColor
+        }
+    }
+
+    Timer {
+        id: showHiddenIndicator
+        interval: 1000
+        property int count: 0
+        triggeredOnStart: true
+        onTriggered: {
+            ++count
+            if (count >= 2) {
+                hiddenIndicator.opacity = 0
+                count = 0;
+                stop();
+            }
+            else {
+                hiddenIndicator.opacity = 1.0
+            }
+        }
     }
 
     Component {
