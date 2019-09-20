@@ -15,6 +15,11 @@ Page {
     property string path:  _fm.getHome()
     property variant filter: [ "*" ]
 
+    // Sorting
+    property string sortType: qsTr("Name")
+    property int _sortField: FolderListModel.Name
+    //
+
     property bool _loaded: false
 
     property QtObject dataContainer
@@ -98,6 +103,7 @@ Page {
         showDotAndDotDot: false
         showOnlyReadable: true
         nameFilters: filter
+        sortField: _sortField
     }
 
     // WORKAROUND showHidden buggy not refreshing
@@ -108,6 +114,7 @@ Page {
         showDotAndDotDot: false
         showOnlyReadable: true
         nameFilters: filter
+        sortField: _sortField
     }
 
     function humanSize(bytes) {
@@ -146,6 +153,13 @@ Page {
         url = url.toString();
         var fullPath = url.substring(url.lastIndexOf('://') + 3);
         return fullPath;
+    }
+
+    function updateSortType() {
+        if (_sortField === FolderListModel.Name) sortType = qsTr("Name")
+        else if (_sortField === FolderListModel.Time) sortType = qsTr("Time")
+        else if (_sortField === FolderListModel.Size) sortType = qsTr("Size")
+        else if (_sortField === FolderListModel.Type) sortType = qsTr("Type")
     }
 
     SilicaListView {
@@ -201,10 +215,16 @@ Page {
 //                text: qsTr("Show Android SDCard")
 //                onClicked: fileModel.folder = _fm.getHome() + "/android_storage";
 //            }
-//            MenuItem {
-//                text: qsTr("Show SDCard")
-//                onClicked: fileModel.folder = _fm.getRoot() + "media/sdcard";
-//            }
+            MenuItem {
+                text: qsTr("Sort by: ") + sortType
+                onClicked: {
+                    if (_sortField === FolderListModel.Name) _sortField = FolderListModel.Time
+                    else if (_sortField === FolderListModel.Time) _sortField = FolderListModel.Size
+                    else if (_sortField === FolderListModel.Size) _sortField = FolderListModel.Type
+                    else if (_sortField === FolderListModel.Type) _sortField = FolderListModel.Name
+                    updateSortType();
+                }
+            }
             MenuItem {
                 text: qsTr("Add to places")
                 onClicked: {
@@ -348,7 +368,7 @@ Page {
                     }
 
                     if (fileIsDir) {
-                        var anotherFM = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {"path": filePath, "dataContainer": dataContainer, "selectMode": selectMode, "multiSelect": multiSelect});
+                        var anotherFM = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {"path": filePath, "_sortField": _sortField, "dataContainer": dataContainer, "selectMode": selectMode, "multiSelect": multiSelect});
                         anotherFM.fileOpen.connect(fileOpen)
                     } else {
                         if (!selectMode) openFile(filePath)
@@ -402,6 +422,10 @@ Page {
         }
         VerticalScrollDecorator { flickable: view }
     }
+    Component.onCompleted: {
+        updateSortType()
+    }
+
     Connections {
         target: _fm
         onSourceUrlChanged: {
