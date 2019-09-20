@@ -117,10 +117,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Cut</source>
         <translation type="unfinished"></translation>
     </message>

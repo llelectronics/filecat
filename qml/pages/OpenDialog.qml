@@ -235,7 +235,7 @@ Page {
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("fmComponents/FileProperties.qml"),
                                           {"path": findFullPath(fileModel.folder), dataContainer: dataContainer, "fileIcon": "image://theme/icon-m-folder", "fileSize": "4k",
-                                           "fileModified": fileModel.fileModified, "fileIsDir": true, "father": page})
+                                           "fileModified": fileModel.fileModified.toLocaleString(), "fileIsDir": true, "father": page})
                     //console.debug("Path: " + findFullPath(fileModel.folder))
                 }
             }
@@ -321,7 +321,7 @@ Page {
                     anchors.left: fileIcon.right
                     anchors.leftMargin: Theme.paddingLarge
                     anchors.top: fileLabel.bottom
-                    text: fileIsDir ? qsTr("directory") : humanSize(fileSize) + ", " + fileModified
+                    text: fileIsDir ? fileModified.toLocaleString() : humanSize(fileSize) + ", " + fileModified.toLocaleString()
                     color: Theme.secondaryColor
                     width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
                     truncationMode: TruncationMode.Fade
