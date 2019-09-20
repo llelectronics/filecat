@@ -21,6 +21,7 @@ SOURCES += src/harbour-filecat.cpp \
 DISTFILES += qml/harbour-filecat.qml \
     qml/cover/CoverPage.qml \
     qml/pages/OpenDialog.qml \
+    qml/pages/fmComponents/TextEditor.qml \
     rpm/harbour-filecat.changes.in \
     rpm/harbour-filecat.changes.run.in \
     rpm/harbour-filecat.spec \
@@ -43,6 +44,7 @@ TRANSLATIONS += translations/harbour-filecat-de.ts
 QT += dbus
 
 HEADERS += \
+    src/fileio.h \
     src/fmhelper.hpp \
     src/folderlistmodel/fileinfothread_p.h \
     src/folderlistmodel/fileproperty_p.h \

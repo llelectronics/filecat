@@ -89,6 +89,10 @@
         <source>Last modified</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Open with Texteditor</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenDialog</name>
@@ -298,6 +302,13 @@
     </message>
     <message>
         <source>New name</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>TextEditor</name>
+    <message>
+        <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

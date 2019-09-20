@@ -73,10 +73,9 @@ Page {
                 }
                 return;
             }
-//            else if ((mimeinfo[1] === "html")  && dataContainer) {  // TODO: Check if this works for image files aswell
-//                dataContainer.url = path; // WTF this seems to work :P
-//                pageStack.pop(dataContainer, PageStackAction.Animated);
-//            }
+            else if ((mimeinfo[0] === "text")) {
+                pageStack.push("fmComponents/TextEditor.qml", { "fileName" : path },  PageStackAction.Animated);
+            }
             else if (mimeinfo[0] === "image") {
                 compoImgViewer.createObject (overlay, {
                                                  "source" : path,

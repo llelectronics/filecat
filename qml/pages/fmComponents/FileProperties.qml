@@ -32,6 +32,7 @@ Page {
                 if (isSymLink && symLinkTarget != "") return false
                 else return true
             }
+            property bool isDir: !_fm.isFile(path.toString())
             property string mimeType: _fm.getMime(path.toString())
             property string permissions: _fm.getPermissions(path.toString())
             property string owner: _fm.getOwner(path.toString())
@@ -41,6 +42,11 @@ Page {
         // TODO: Implement
 
             PullDownMenu {
+                MenuItem {
+                    text: qsTr("Open with Texteditor")
+                    visible: !fileData.isDir
+                    onClicked: pageStack.push("TextEditor.qml", { "fileName" : path },  PageStackAction.Animated);
+                }
                 MenuItem {
                     text: qsTr("Change Permissions")
                     onClicked: {
@@ -83,11 +89,6 @@ Page {
                         })
                     }
                 }
-//                MenuItem {
-//                    text: qsTr("View Contents")
-//                    visible: !fileData.isDir
-//                    onClicked: viewContents()
-//                }
 
 //                MenuItem {
 //                    text: qsTr("Go to Target")

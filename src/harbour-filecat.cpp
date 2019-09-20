@@ -6,6 +6,7 @@
 #include "fmhelper.hpp"
 #include "folderlistmodel/qquickfolderlistmodel.h"
 #include "videohelper.hpp"
+#include "fileio.h"
 
 #include <QQuickView>
 #include <QGuiApplication>
@@ -39,6 +40,9 @@ int main(int argc, char *argv[])
 
     FM *fileAction = new FM();
     view->engine()->rootContext()->setContextProperty("_fm", fileAction);
+
+    FileIO fileIO;
+    view->engine()->rootContext()->setContextProperty("_fileio", &fileIO);
 
     view->setSource(SailfishApp::pathTo("qml/harbour-filecat.qml"));
 
