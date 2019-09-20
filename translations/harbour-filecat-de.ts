@@ -258,6 +258,10 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>Android Storage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Places</source>
         <translation type="unfinished"></translation>
     </message>

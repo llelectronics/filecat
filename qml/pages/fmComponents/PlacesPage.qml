@@ -70,6 +70,11 @@ Page {
             name: qsTr("Videos"),
             path: vidDir,
             icon: "image://theme/icon-m-media"
+        },
+        {
+            name: qsTr("Android Storage"),
+            path: _fm.getHome() + "/android_storage",
+            icon: "image://theme/icon-m-file-apk"
         }
     ]
 
@@ -166,11 +171,23 @@ Page {
                     property var item: model.modelData ? model.modelData : model
                     icon: item.icon
                     text: item.name
+                    height: Theme.itemSizeSmall
                     onClicked: {
                         if (father.path!==item.path) {
                             father.path = item.path
                         }
                         pageStack.navigateBack()
+                    }
+                    visible: {
+                        if (item.icon === "image://theme/icon-m-file-apk") {
+                            if (_fm.existsPath(_fm.getHome() + "/android_storage")) {
+                                return true
+                            }
+                            else
+                                return false
+
+                        }
+                        else return true
                     }
                 }
             }
