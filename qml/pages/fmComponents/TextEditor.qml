@@ -12,8 +12,7 @@ Page {
 
     onStatusChanged: {
         if (status === PageStatus.Active) {
-            textData.text = _fileio.read(fileName)
-            if (textData.text !== "") loaded = true
+            _fileio.read(fileName)
         }
     }
 
@@ -64,6 +63,14 @@ Page {
 
         }
 
+    }
+
+    Connections {
+        target: _fileio
+        onTxtDataChanged: {
+            textData.text = _fileio.txtData();
+            if (textData.text !== "") loaded = true
+        }
     }
 
 }
