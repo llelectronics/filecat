@@ -21,6 +21,7 @@ SOURCES += src/harbour-filecat.cpp \
 DISTFILES += qml/harbour-filecat.qml \
     qml/cover/CoverPage.qml \
     qml/pages/OpenDialog.qml \
+    qml/pages/fmComponents/FileItemDelegate.qml \
     qml/pages/fmComponents/TextEditor.qml \
     rpm/harbour-filecat.changes.in \
     rpm/harbour-filecat.changes.run.in \
