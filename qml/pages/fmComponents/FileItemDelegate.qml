@@ -102,7 +102,7 @@ BackgroundItem {
             }
 
             if (fileIsDir) {
-                var anotherFM = pageStack.push(Qt.resolvedUrl("../OpenDialog.qml"), {"path": filePath, "_sortField": _sortField, "dataContainer": dataContainer, "selectMode": selectMode, "multiSelect": multiSelect});
+                var anotherFM = pageStack.push(Qt.resolvedUrl("../OpenDialog.qml"), {"path": filePath, "_sortField": _sortField, "dataContainer": dataContainer, "selectMode": selectMode, "multiSelect": multiSelect, "lastSavedDir": mainWindow.lastKnownDir});
                 anotherFM.fileOpen.connect(fileOpen)
             } else {
                 if (!selectMode) openFile(filePath)

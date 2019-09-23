@@ -175,6 +175,10 @@
         <source>Sort by: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Saved directory to last known</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

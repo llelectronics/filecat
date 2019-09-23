@@ -15,6 +15,8 @@ Page {
     property string path:  _fm.getHome()
     property variant filter: [ "*" ]
 
+    property string lastSavedDir: mainWindow.lastKnownDir
+
     // Sorting
     property string sortType: qsTr("Name")
     property int _sortField: FolderListModel.Name
@@ -182,6 +184,26 @@ Page {
                     }
                     hiddenShow = !hiddenShow
                     showHiddenIndicator.start()
+                }
+                onPressAndHold: {
+                    mainWindow.lastKnownDir = fileModel.folder
+                    lastSavedDir = fileModel.folder
+                    infoBanner.parent = page
+                    infoBanner.anchors.top = page.top
+                    infoBanner.showText(qsTr("Saved directory to last known"))
+                }
+            }
+            BackgroundItem {
+                anchors.left: extraContent.left
+                anchors.top: extraContent.top
+                visible: lastSavedDir !== ""
+                Label {
+                    text: "\u21B7"
+                    font.pixelSize: Theme.fontSizeHuge
+                }
+                onClicked: {
+                    var anotherFM = pageStack.push(Qt.resolvedUrl("OpenDialog.qml"), {"path": lastSavedDir, "_sortField": _sortField, "dataContainer": dataContainer, "selectMode": selectMode, "multiSelect": multiSelect, "lastSavedDir": ""});
+                    anotherFM.fileOpen.connect(fileOpen)
                 }
             }
         }

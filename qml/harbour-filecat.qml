@@ -10,6 +10,8 @@ ApplicationWindow
     cover: undefined
     allowedOrientations: defaultAllowedOrientations
 
+    property string lastKnownDir
+
     property alias infoBanner: infoBanner
 
     property bool vPlayerExternal: false
