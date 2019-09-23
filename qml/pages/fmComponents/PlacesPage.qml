@@ -36,7 +36,7 @@ Page {
         {
             name: qsTr("SD Card"),
             path: sdCardDir,
-            icon: isLightTheme? "../img/sdcard-inv.png" : "../img/sdcard.png",
+            icon: "image://theme/icon-m-sd-card",
         }
     ]
 
