@@ -23,6 +23,7 @@ DISTFILES += qml/harbour-filecat.qml \
     qml/pages/OpenDialog.qml \
     qml/pages/fmComponents/FileItemDelegate.qml \
     qml/pages/fmComponents/TextEditor.qml \
+    qml/pages/fmComponents/mimetypeIcons.js \
     rpm/harbour-filecat.changes.in \
     rpm/harbour-filecat.changes.run.in \
     rpm/harbour-filecat.spec \
