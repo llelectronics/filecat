@@ -310,8 +310,14 @@ Page {
         anchors.top: parent.top
         anchors.topMargin: 4 * Theme.paddingLarge
         opacity: 0
+        property alias fadeOut: fadeOut
 
-        NumberAnimation on opacity { duration: 500 }
+        NumberAnimation on opacity {
+            id: fadeOut
+            to: 0
+            duration: 500
+            easing.type: Easing.InOutCubic
+        }
 
         Rectangle {
             width: hiddenblIndicator.width + 2 * Theme.paddingMedium
@@ -335,10 +341,11 @@ Page {
         interval: 1000
         property int count: 0
         triggeredOnStart: true
+        repeat: true
         onTriggered: {
             ++count
             if (count >= 2) {
-                hiddenIndicator.opacity = 0
+                hiddenIndicator.fadeOut.start()
                 count = 0;
                 stop();
             }
