@@ -20,363 +20,365 @@
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Erstellen des Ordners</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner erstellen</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation type="unfinished"></translation>
+        <translation>Erstellen</translation>
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner erstellen unter</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordnername</translation>
     </message>
 </context>
 <context>
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche </translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausschneiden</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieren</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschaften</translation>
     </message>
 </context>
 <context>
     <name>FileProperties</name>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechtigungen ändern</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Umbenennen</translation>
     </message>
     <message>
         <source>Error renaming</source>
-        <translation type="unfinished"></translation>
+        <translation>Umbenennen fehlgeschlagen</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschaften</translation>
     </message>
     <message>
         <source>Location</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Link to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Link zu %1</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechtigungen</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigentümer</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation type="unfinished"></translation>
+        <translation>Zuletzt bearbeitet</translation>
     </message>
     <message>
         <source>Open with Texteditor</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne mit Texteditor</translation>
     </message>
 </context>
 <context>
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffne...</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner erstellen</translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation type="unfinished"></translation>
+        <translation>Zu Orte hinzufügen</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation type="unfinished"></translation>
+        <translation>Einfügen</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschaften</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Einfügen</translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateioperation erfolgreich</translation>
     </message>
     <message>
         <source>Hide hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Versteckte Dateien ausblenden</translation>
     </message>
     <message>
         <source>Show hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Versteckte Dateien anzeigen</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Name</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Datum</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Sort by: </source>
-        <translation type="unfinished"></translation>
+        <translation>Sortiere nach: </translation>
     </message>
     <message>
         <source>Saved directory to last known</source>
-        <translation type="unfinished"></translation>
+        <translation>letztes bekanntes Verzeichnis gespeichert</translation>
     </message>
 </context>
 <context>
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation type="unfinished"></translation>
+        <translation>URL laden</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation type="unfinished"></translation>
+        <translation>URL hier eintippen</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation type="unfinished"></translation>
+        <translation>URL zur Mediendatei/-stream</translation>
     </message>
 </context>
 <context>
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechtigungen konnten nicht geändert werden</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechtigungen ändern</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Ändern</translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation type="unfinished"></translation>
+        <translation>Berechtigungen ändern für</translation>
     </message>
     <message>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Lesen</translation>
     </message>
     <message>
         <source>Write</source>
-        <translation type="unfinished"></translation>
+        <translation>Schreiben</translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausführen</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigentümer</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation>Gruppe</translation>
     </message>
     <message>
         <source>Others</source>
-        <translation type="unfinished"></translation>
+        <translation>Andere</translation>
     </message>
 </context>
 <context>
     <name>PlacesPage</name>
     <message>
         <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerätespeicher</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>SD-Speicherkarte</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzerverzeichnis</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Dokumente</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>Downloads</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>Musik</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilder</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>Videos</translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android Datenspeicher</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation type="unfinished"></translation>
+        <translation>Orte</translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Geräte</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>Allgemein</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Benutzerdefiniert</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche </translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Umbenennen</translation>
     </message>
 </context>
 <context>
     <name>RenameDialog</name>
     <message>
         <source>Rename</source>
-        <translation type="unfinished"></translation>
+        <translation>Umbenennen</translation>
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie einen neuen Namen ein für</translation>
     </message>
     <message>
         <source>New name</source>
-        <translation type="unfinished"></translation>
+        <translation>Neuer Name</translation>
     </message>
 </context>
 <context>
     <name>TextEditor</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichern</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei öffnen</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Stream öffnen</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Herunterziehen zum Laden von Datei oder Stream</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausblenden</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation type="unfinished"></translation>
+<translation>
+Das Video kann wegen unzureichender Ressourcen nicht wiedergegeben werden.
+Bei Youtube Videos stellen Sie sicher angemeldet zu sein. Einige Videos könnten in ihrem Land geblockt sein oder erst nach Anmeldung bei Youtube angesehen werden.</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Audio und oder Video Format wird nicht unterstützt.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Video kann wegen Netzwerkproblemen nicht wiedergegeben werden.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation type="unfinished"></translation>
+       <translation>Das Video kann wegen unzureichender Berechtigung nicht wiedergegeben werden.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation type="unfinished"></translation>
+         <translation>Das Video kann nicht wiedergegeben werden, weil der Media Dienst nicht gestartet werden konnte.</translation>
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf Bildschirmgröße gezoomt</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Original</translation>
     </message>
 </context>
 </TS>
