@@ -255,7 +255,7 @@ Item {
         id: mediaItem
         property bool active : false
         visible: active && mainWindow.applicationActive
-        parent: pincher
+        parent: pincher.enabled ? pincher : videoPlayerPage
         anchors.fill: parent
 
         VideoPoster {
@@ -453,7 +453,8 @@ Item {
 
     PinchArea {
         id: pincher
-        enabled: allowScaling
+        enabled: allowScaling && !pulley.visible && !errorBox.visible
+        visible: enabled
         anchors.fill: parent
         pinch.target: video
         pinch.minimumScale: 1
