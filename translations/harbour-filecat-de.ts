@@ -348,7 +348,7 @@
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-<translation>
+        <translation>
 Das Video kann wegen unzureichender Ressourcen nicht wiedergegeben werden.
 Bei Youtube Videos stellen Sie sicher angemeldet zu sein. Einige Videos könnten in ihrem Land geblockt sein oder erst nach Anmeldung bei Youtube angesehen werden.</translation>
     </message>
@@ -365,12 +365,12 @@ The video cannot be played due to network issues.</source>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-       <translation>Das Video kann wegen unzureichender Berechtigung nicht wiedergegeben werden.</translation>
+        <translation>Das Video kann wegen unzureichender Berechtigung nicht wiedergegeben werden.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-         <translation>Das Video kann nicht wiedergegeben werden, weil der Media Dienst nicht gestartet werden konnte.</translation>
+        <translation>Das Video kann nicht wiedergegeben werden, weil der Media Dienst nicht gestartet werden konnte.</translation>
     </message>
     <message>
         <source>Zoomed to fit screen</source>
