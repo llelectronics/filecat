@@ -22,6 +22,7 @@ public slots:
 
         QString line;
         QTextStream stream(&file);
+        _txtData = "";
         while (!stream.atEnd()){
             line = stream.readLine();
             _txtData += line+"\n";
