@@ -49,7 +49,8 @@ translations/harbour-filecat-it.ts \
 translations/harbour-filecat-nl_BE.ts \
 translations/harbour-filecat-nl_NL.ts \
 translations/harbour-filecat-pl.ts \
-translations/harbour-filecat-sv.ts
+translations/harbour-filecat-sv.ts \
+translations/harbour-filecat-zh_CN.ts
 
 QT += dbus
 
