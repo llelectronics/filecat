@@ -13,7 +13,7 @@
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Ma couverture</translation>
     </message>
 </context>
 <context>
@@ -47,15 +47,15 @@
     </message>
     <message>
         <source>Cut</source>
-        <translation type="unfinished"></translation>
+        <translation>Couper</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation>Copier</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Suppression</translation>
+        <translation>Supprimer</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -66,7 +66,7 @@
     <name>FileProperties</name>
     <message>
         <source>Change Permissions</source>
-        <translation>Modifier les autorisations</translation>
+        <translation>Modifier les permissions</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -82,7 +82,7 @@
     </message>
     <message>
         <source>Location</source>
-        <translation>Position</translation>
+        <translation>Emplacement</translation>
     </message>
     <message>
         <source>Type</source>
@@ -98,7 +98,7 @@
     </message>
     <message>
         <source>Permissions</source>
-        <translation>Autorisations</translation>
+        <translation>Permissions</translation>
     </message>
     <message>
         <source>Owner</source>
@@ -114,14 +114,14 @@
     </message>
     <message>
         <source>Open with Texteditor</source>
-        <translation type="unfinished"></translation>
+        <translation>Ouvrir avec Texteditor</translation>
     </message>
 </context>
 <context>
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>Ouverture ...</translation>
+        <translation>Ouverture...</translation>
     </message>
     <message>
         <source>Create Folder</source>
@@ -177,7 +177,7 @@
     </message>
     <message>
         <source>Saved directory to last known</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer dans le dernier dossier connu</translation>
     </message>
 </context>
 <context>
@@ -199,7 +199,7 @@
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation type="unfinished"></translation>
+        <translation>Changement de permission impossible</translation>
     </message>
     <message>
         <source>Change Permissions</source>
@@ -207,23 +207,23 @@
     </message>
     <message>
         <source>Change</source>
-        <translation type="unfinished"></translation>
+        <translation>Changer</translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation type="unfinished"></translation>
+        <translation>Changer les permissions pour</translation>
     </message>
     <message>
         <source>Read</source>
-        <translation type="unfinished"></translation>
+        <translation>Lecture</translation>
     </message>
     <message>
         <source>Write</source>
-        <translation type="unfinished"></translation>
+        <translation>Écriture</translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation type="unfinished"></translation>
+        <translation>Exécuter</translation>
     </message>
     <message>
         <source>Owner</source>
@@ -235,7 +235,7 @@
     </message>
     <message>
         <source>Others</source>
-        <translation type="unfinished"></translation>
+        <translation>Autres</translation>
     </message>
 </context>
 <context>
@@ -290,7 +290,7 @@
     </message>
     <message>
         <source>Custom</source>
-        <translation>Custom</translation>
+        <translation>Personnalisé</translation>
     </message>
     <message>
         <source>Deleting </source>
@@ -320,7 +320,7 @@
     <name>TextEditor</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer</translation>
     </message>
 </context>
 <context>
@@ -378,11 +378,11 @@ La vidéo ne peut pas être lue car le service média n&apos;a pas pu être inst
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoomer à la taille de l'écran</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Taille d'origine</translation>
     </message>
 </context>
 </TS>
