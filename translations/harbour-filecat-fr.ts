@@ -378,11 +378,11 @@ La vidéo ne peut pas être lue car le service média n&apos;a pas pu être inst
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation>Zoomer à la taille de l'écran</translation>
+        <translation>Zoomer à la taille de l&apos;écran</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Taille d'origine</translation>
+        <translation>Taille d&apos;origine</translation>
     </message>
 </context>
 </TS>
