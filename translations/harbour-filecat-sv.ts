@@ -13,7 +13,7 @@
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -43,7 +43,7 @@
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Tar bort </translation>
     </message>
     <message>
         <source>Cut</source>
@@ -114,7 +114,7 @@
     </message>
     <message>
         <source>Open with Texteditor</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna med textredigerare</translation>
     </message>
 </context>
 <context>
@@ -141,19 +141,19 @@
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation>Kunde inte klistra in filen</translation>
+        <translation>Kunde inte klistra in filen </translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation>Filoperationen lyckades</translation>
+        <translation>Filåtgärden slutfördes</translation>
     </message>
     <message>
         <source>Hide hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj dolda filer</translation>
     </message>
     <message>
         <source>Show hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa dolda filer</translation>
     </message>
     <message>
         <source>Name</source>
@@ -169,15 +169,15 @@
     </message>
     <message>
         <source>Type</source>
-        <translation>typ</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Sort by: </source>
-        <translation>Sortera efter:</translation>
+        <translation>Sortera efter: </translation>
     </message>
     <message>
         <source>Saved directory to last known</source>
-        <translation type="unfinished"></translation>
+        <translation>Sparade platsen i senast kända</translation>
     </message>
 </context>
 <context>
@@ -294,7 +294,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Tar bort </translation>
     </message>
     <message>
         <source>Rename</source>
@@ -320,7 +320,7 @@
     <name>TextEditor</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara</translation>
     </message>
 </context>
 <context>
@@ -350,7 +350,7 @@ The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
         <translation>
 Filmen kan inte spelas upp på grund av problem att komma åt resurser.
-Se till att logga in på Youtube. Några filmer kan vara geografiskt blockerade eller kräver att du skall vara inloggad på Youtube.</translation>
+Se till att logga in om det är Youtube-filmer. Några filmer kan vara geografiskt blockerade eller kräver att du skall vara inloggad på Youtube.</translation>
     </message>
     <message>
         <source>
