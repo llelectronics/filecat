@@ -25,6 +25,7 @@ Page {
     property bool _loaded: false
 
     property QtObject dataContainer
+    property QtObject imgView
 
     signal fileOpen(string path);
 
@@ -48,6 +49,7 @@ Page {
 
     onPathChanged: {
         openFile(path);
+        if (imgView) imgView.destroy();
     }
 
     onStatusChanged: {
@@ -79,7 +81,7 @@ Page {
                 pageStack.push("fmComponents/TextEditor.qml", { "fileName" : path },  PageStackAction.Animated);
             }
             else if (mimeinfo[0] === "image") {
-                compoImgViewer.createObject (overlay, {
+                imgView = compoImgViewer.createObject (overlay, {
                                                  "source" : path,
                                              });
             } else {
