@@ -6,25 +6,25 @@
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Ops, impossibile visualizzare l&apos;immagine</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation type="unfinished"></translation>
+        <translation>Filecat</translation>
     </message>
 </context>
 <context>
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation>C&apos;è stato un errore creando la nuova cartella</translation>
+        <translation>Errore nel creare la nuova cartella</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation>Crea Cartella</translation>
+        <translation>Crea cartella</translation>
     </message>
     <message>
         <source>Create</source>
@@ -32,7 +32,7 @@
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation>Crea una nuova cartella sotto</translation>
+        <translation>Crea una nuova cartella in</translation>
     </message>
     <message>
         <source>Folder name</source>
@@ -43,7 +43,7 @@
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation>Eliminazione</translation>
+        <translation>Eliminazione </translation>
     </message>
     <message>
         <source>Cut</source>
@@ -55,7 +55,7 @@
     </message>
     <message>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Elimina</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -66,7 +66,7 @@
     <name>FileProperties</name>
     <message>
         <source>Change Permissions</source>
-        <translation>Cambia Permessi</translation>
+        <translation>Cambia permessi</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -74,7 +74,7 @@
     </message>
     <message>
         <source>Error renaming</source>
-        <translation>Errore durante la ridenominazione</translation>
+        <translation>Errore durante la rinominazione</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -114,7 +114,7 @@
     </message>
     <message>
         <source>Open with Texteditor</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri con editor di testo</translation>
     </message>
 </context>
 <context>
@@ -125,11 +125,11 @@
     </message>
     <message>
         <source>Create Folder</source>
-        <translation>Crea Cartella</translation>
+        <translation>Crea cartella</translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation>Aggiungi ai Luoghi</translation>
+        <translation>Aggiungi alle posizioni</translation>
     </message>
     <message>
         <source>Paste</source>
@@ -141,7 +141,7 @@
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation>Errore incollando il file</translation>
+        <translation>Errore nell&apos;incollare il file </translation>
     </message>
     <message>
         <source>File operation succeeded</source>
@@ -149,19 +149,19 @@
     </message>
     <message>
         <source>Hide hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Nascondi file nascosti</translation>
     </message>
     <message>
         <source>Show hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostra file nascosti</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Data</translation>
     </message>
     <message>
         <source>Size</source>
@@ -173,11 +173,11 @@
     </message>
     <message>
         <source>Sort by: </source>
-        <translation type="unfinished"></translation>
+        <translation>Ordina per: </translation>
     </message>
     <message>
         <source>Saved directory to last known</source>
-        <translation type="unfinished"></translation>
+        <translation>Cartella salvata come ultima conosciuta</translation>
     </message>
 </context>
 <context>
@@ -188,22 +188,22 @@
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation>Digita qui la URL</translation>
+        <translation>Digita qui URL</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation>URL per file/flusso multimediale</translation>
+        <translation>URL per file/stream</translation>
     </message>
 </context>
 <context>
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation>Impossibile cambiare i permessi</translation>
+        <translation>Impossibile cambiare permessi</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation>Cambia Permessi</translation>
+        <translation>Cambia permessi</translation>
     </message>
     <message>
         <source>Change</source>
@@ -274,11 +274,11 @@
     </message>
     <message>
         <source>Android Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Memoria Android</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>Luoghi</translation>
+        <translation>Posizioni</translation>
     </message>
     <message>
         <source>Devices</source>
@@ -294,7 +294,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Eliminazione</translation>
+        <translation>Eliminazione </translation>
     </message>
     <message>
         <source>Rename</source>
@@ -309,7 +309,7 @@
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation>Dai un nuovo nome per</translation>
+        <translation>Dai nuovo nome a</translation>
     </message>
     <message>
         <source>New name</source>
@@ -320,29 +320,29 @@
     <name>TextEditor</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Salva</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation>Apri File</translation>
+        <translation>Apri file</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation>Apri Flusso</translation>
+        <translation>Apri stream</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation>Scorri in basso per caricare un file o un flusso</translation>
+        <translation>Scorri in basso per caricare un file o uno stream</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation>Abbandona</translation>
+        <translation>Annulla</translation>
     </message>
     <message>
         <source>
@@ -350,7 +350,7 @@ The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
         <translation>
 Non è possibile riprodurre il video a causa di un problema nell&apos;allocazione delle risorse.
-Prego assicurarsi su Youtube Videos di essere autenticati. Alcuni video potrebbero essere geo-bloccati o richiedere che si sia autenticati su youtube.</translation>
+Per i video YouTube, assicurati di essere autenticato. Alcuni video potrebbero essere bloccati geograficamente o richiedere l&apos;accesso a YouTube.</translation>
     </message>
     <message>
         <source>
@@ -374,15 +374,15 @@ Non è possibile riprodurre il video a causa di permessi insufficienti.</transla
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
         <translation>
-Non è possibile riprodurre il video perché il servizio media non può essere istanziato.</translation>
+Non è possibile riprodurre il video perché il servizio media non può essere inizializzato.</translation>
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom per riempire lo schermo</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation type="unfinished"></translation>
+        <translation>Originale</translation>
     </message>
 </context>
 </TS>
