@@ -21,6 +21,22 @@ ApplicationWindow
         else return true
     }
 
+    ListModel {
+        id: clipboard
+//        ListElement {
+//            source: "path/to/filename"
+//              name: "filename"
+//        }
+        function add(path,name) {
+            append({"source":path, "name": name});
+        }
+        function remove(path) {
+            for (var i=0; i<count; i++) {
+                if (get(i).source === path) remove(i);
+            }
+        }
+    }
+
     function findBaseName(url) {
         url = url.toString();
         var fileName = url.substring(url.lastIndexOf('/') + 1);

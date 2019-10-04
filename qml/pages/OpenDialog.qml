@@ -8,7 +8,7 @@ Page {
     id: page
     allowedOrientations: Orientation.All
 
-    property bool multiSelect: onlyFolders ? true : false
+    property bool multiSelect: selectMode ? true : false
     property bool selectMode: false
     property bool onlyFolders: false
     property bool hiddenShow: false

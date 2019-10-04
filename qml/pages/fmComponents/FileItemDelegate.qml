@@ -84,13 +84,18 @@ BackgroundItem {
         }
         Switch {
             id: mSelect
-            visible: fileIsDir && multiSelect && onlyFolders
+            visible: multiSelect
             anchors.right: parent.right
+            anchors.verticalCenter: parent.verticalCenter
             checked: false
             onClicked: {
                 checked = !checked
-                fileOpen(filePath);
-                pageStack.pop();
+                if (checked) {
+                   clipboard.add(filePath,fileName)
+                }
+                else {
+                    clipboard.remove(filePath)
+                }
             }
         }
 
@@ -126,6 +131,13 @@ BackgroundItem {
     Component {
         id: myMenu
         ContextMenu {
+            MenuItem {
+                text: qsTr("Select")
+                onClicked: {
+                    multiSelect = !multiSelect
+                    mSelect.checked = !mSelect.checked
+                }
+            }
             MenuItem {
                 text: qsTr("Cut")
                 onClicked: {
