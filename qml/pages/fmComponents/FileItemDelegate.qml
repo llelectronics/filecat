@@ -90,8 +90,10 @@ BackgroundItem {
             checked: false
             onClicked: {
                 checked = !checked
+            }
+            onCheckedChanged: {
                 if (checked) {
-                   clipboard.add(filePath,fileName)
+                    clipboard.add(filePath,fileName)
                 }
                 else {
                     clipboard.remove(filePath)
