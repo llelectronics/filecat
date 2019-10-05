@@ -21,13 +21,15 @@ BackgroundItem {
 
     function copy() {
         _fm.moveMode = false;
-        _fm.sourceUrl = filePath;
+        clipboard.add(filePath, fileName);
+        _fm.sourceUrl = clipboard.get(0).source;
         //console.debug(_fm.sourceUrl)
     }
 
     function move() {
         _fm.moveMode = true;
-        _fm.sourceUrl = filePath;
+        clipboard.add(filePath, fileName);
+        _fm.sourceUrl = clipboard.get(0).source;
     }
 
     ListItem {

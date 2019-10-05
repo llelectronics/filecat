@@ -53,6 +53,9 @@ class FM : public QObject
         {
             QDir(url).removeRecursively();
         }
+        void resetWatcher() {
+            watcher.disconnect();
+        }
         QString getHome()
         {    //qDebug() << "Called the C++ slot and request removal of:" << url;
              return QDir::homePath();
@@ -115,7 +118,9 @@ class FM : public QObject
             return true;
         }
         bool copyFile(const QString &source, const QString &target) {
-            connect(&watcher, SIGNAL(finished()), this, SLOT(cpFinished()));
+            connect(&watcher, &QFutureWatcher<void>::finished, [this,source]() {
+                this->cpFinished(source);
+            });
             QFuture<bool> future = QtConcurrent::run(this, &FM::cpFile, source, target);
             watcher.setFuture(future);
             return true;
@@ -235,16 +240,16 @@ class FM : public QObject
                 mime = db.mimeTypeForFile(filename.mid(idx, regex.matchedLength()));
             return mime.name();
         }
-        void cpFinished()
+        void cpFinished(const QString &source)
         {
            m_cpResult = watcher.future().result();
            qDebug() << "m_cpResult = " << m_cpResult;
            // Check for target copied successfully
            if (m_cpResult && m_moveMode) {
-               qDebug() << "m_sourceUrl: " + m_sourceUrl;
-               QFileInfo srcFileInfo(m_sourceUrl);
-               if (srcFileInfo.isDir()) { removeDir(m_sourceUrl); }
-               else remove(m_sourceUrl);
+               qDebug() << "m_sourceUrl: " + source;
+               QFileInfo srcFileInfo(source);
+               if (srcFileInfo.isDir()) { removeDir(source); }
+               else remove(source);
            }
            emit cpResultChanged();
         }

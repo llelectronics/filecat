@@ -22,6 +22,7 @@ DISTFILES += qml/harbour-filecat.qml \
     qml/cover/CoverPage.qml \
     qml/pages/OpenDialog.qml \
     qml/pages/fmComponents/FileItemDelegate.qml \
+    qml/pages/fmComponents/MultiSelectBar.qml \
     qml/pages/fmComponents/TextEditor.qml \
     qml/pages/fmComponents/mimetypeIcons.js \
     rpm/harbour-filecat.changes.in \
@@ -61,3 +62,5 @@ HEADERS += \
     src/folderlistmodel/fileproperty_p.h \
     src/folderlistmodel/qquickfolderlistmodel.h \
     src/videohelper.hpp
+
+CONFIG += c++11

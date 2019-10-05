@@ -61,6 +61,10 @@
         <source>Properties</source>
         <translation>Propriétés</translation>
     </message>
+    <message>
+        <source>Select</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FileProperties</name>
@@ -115,6 +119,13 @@
     <message>
         <source>Open with Texteditor</source>
         <translation>Ouvrir avec Texteditor</translation>
+    </message>
+</context>
+<context>
+    <name>MultiSelectBar</name>
+    <message>
+        <source> Files</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

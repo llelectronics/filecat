@@ -60,6 +60,12 @@ Page {
         }
     }
 
+    function refresh() {
+        var oPath = path
+        path = ""
+        path = oPath
+    }
+
     function openFile(path) {
         if (_fm.isFile(path)) {
 
@@ -168,7 +174,8 @@ Page {
     SilicaListView {
         id: view
         model: fileModel
-        anchors.fill: parent
+        width: parent.width
+        height: multiSelectBar.open ? parent.height - multiSelectBar.height : parent.height
 
         header: PageHeader {
             title: findBaseName((path).toString())
@@ -271,7 +278,13 @@ Page {
                 text: qsTr("Paste") + "(" + findBaseName(_fm.sourceUrl) + ")"
                 onClicked: {
                     busyInd.running = true
-                    _fm.copyFile(_fm.sourceUrl,findFullPath(fileModel.folder) + "/" + findBaseName(_fm.sourceUrl))
+                    _fm.resetWatcher();
+                    for (var i=0; i<clipboard.count; i++) {
+                        console.log("Copying " + clipboard.get(i).source + " to " + findFullPath(fileModel.folder) + "/" + clipboard.get(i).name);
+                        _fm.copyFile(clipboard.get(i).source,findFullPath(fileModel.folder) + "/" + clipboard.get(i).name)
+                    }
+                    clipboard.clear();
+                    refresh();
                 }
             }
             MenuItem {
@@ -409,6 +422,11 @@ Page {
     Item {
         id: overlay;
         anchors.fill: page;
+    }
+
+    MultiSelectBar {
+        id: multiSelectBar
+        open: multiSelect
     }
 
 }
