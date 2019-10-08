@@ -266,7 +266,7 @@ class FM : public QObject
                qDebug() << "m_sourceUrl: " + source;
                QFileInfo srcFileInfo(source);
                if (srcFileInfo.isDir()) { removeDir(source); }
-               else remove(source);
+               else removeFile(source);
            }
            emit cpResultChanged();
         }
