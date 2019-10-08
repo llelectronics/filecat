@@ -22,10 +22,12 @@ class FM : public QObject
     Q_PROPERTY (QString sourceUrl READ sourceUrl WRITE setSourceUrl NOTIFY sourceUrlChanged)
     Q_PROPERTY (bool moveMode READ isMoveMode WRITE setMoveMode)
     Q_PROPERTY (bool cpResult READ cpResult NOTIFY cpResultChanged)
+    Q_PROPERTY (bool rmResult READ rmResult NOTIFY rmResultChanged)
 
     signals:
         void sourceUrlChanged();
         void cpResultChanged();
+        void rmResultChanged();
         void dirSizeChanged(quint64 dirSize);
     private:
         QString m_sourceUrl;
@@ -35,23 +37,38 @@ class FM : public QObject
         QFutureWatcher<bool> watcher;
         QFutureWatcher<quint64> dirWatcher;
         bool m_cpResult;
+        bool m_rmResult;
         quint64 m_dirSize;
     private slots:
         void setSourceUrl(const QString &url) { m_sourceUrl = url; emit sourceUrlChanged();}
         void setMoveMode(bool &mode) { m_moveMode = mode;}
+        bool removeFile(const QString &url)
+        {    //qDebug() << "Called the C++ slot and request removal of:" << url;
+            return QFile(url).remove();
+        }
+        bool rm(const QString &url)
+        {    //qDebug() << "Called the C++ slot and request removal of:" << url;
+            if (this->isFile(url)) return this->removeFile(url);
+            else return removeDir(url);
+        }
+        bool removeDir(const QString &url)
+        {
+            return QDir(url).removeRecursively();
+        }
     public:
         QString sourceUrl() {return m_sourceUrl;}
         bool isMoveMode() {return m_moveMode;}
         bool cpResult() {return m_cpResult;}
+        bool rmResult() {return m_rmResult;}
         //quint64 dirSize() { return m_dirSize; }
     public slots:
         void remove(const QString &url)
-        {    //qDebug() << "Called the C++ slot and request removal of:" << url;
-             QFile(url).remove();
-        }
-        void removeDir(const QString &url)
         {
-            QDir(url).removeRecursively();
+            connect(&watcher, &QFutureWatcher<void>::finished, [this]() {
+                this->rmFinished();
+            });
+            QFuture<bool> future = QtConcurrent::run(this, &FM::rm, url);
+            watcher.setFuture(future);
         }
         void resetWatcher() {
             watcher.disconnect();
@@ -258,6 +275,12 @@ class FM : public QObject
            m_dirSize = dirWatcher.future().result();
            //qDebug() << "m_dirSize = " << m_dirSize;
            emit dirSizeChanged(m_dirSize);
+        }
+        void rmFinished()
+        {
+           m_rmResult = watcher.future().result();
+           qDebug() << "m_rmResult = " << m_rmResult;
+           emit rmResultChanged();
         }
 };
 

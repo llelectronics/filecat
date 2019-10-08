@@ -13,10 +13,7 @@ BackgroundItem {
     function remove() {
         var removal = removalComponent.createObject(bgdelegate)
         var toDelPath = filePath
-        if (fileIsDir)
-            removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.removeDir(toDelPath); })
-        else
-            removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(toDelPath); })
+        removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(toDelPath); busyInd.running = true; })
     }
 
     function copy() {

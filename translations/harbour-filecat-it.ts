@@ -194,6 +194,14 @@
         <source>Saved directory to last known</source>
         <translation>Cartella salvata come ultima conosciuta</translation>
     </message>
+    <message>
+        <source>Error deleting file(s)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File deletion succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

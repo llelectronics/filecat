@@ -49,8 +49,8 @@ DockedPanel {
                                              for (var i=0; i<clipboard.count; i++) {
                                                  var curPath = clipboard.get(i).source
                                                  console.log("Deleting " + curPath + " with name " + clipboard.get(i).name);
-                                                 if (_fm.isFile(curPath)) _fm.remove(curPath);
-                                                 else _fm.removeDir(curPath);
+                                                 busyInd.running = true;
+                                                 _fm.remove(curPath);
                                              }
                                              multiSelect = false
                                              clipboard.clear();
