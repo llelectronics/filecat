@@ -44,6 +44,18 @@ DockedPanel {
                icon.source: "image://theme/icon-m-delete"
                onClicked: {
                    console.log("Delete")
+                   remorseRemove.execute(qsTr("Deleting %1 files").arg(clipboard.count) ,
+                                         function() {
+                                             for (var i=0; i<clipboard.count; i++) {
+                                                 var curPath = clipboard.get(i).source
+                                                 console.log("Deleting " + curPath + " with name " + clipboard.get(i).name);
+                                                 if (_fm.isFile(curPath)) _fm.remove(curPath);
+                                                 else _fm.removeDir(curPath);
+                                             }
+                                             multiSelect = false
+                                             clipboard.clear();
+                                             refresh();
+                                         } )
                }
            }
            IconButton {

@@ -429,4 +429,8 @@ Page {
         open: multiSelect
     }
 
+    RemorsePopup {
+        id: remorseRemove
+    }
+
 }
