@@ -46,6 +46,7 @@ DockedPanel {
                    console.log("Delete")
                    remorseRemove.execute(qsTr("Deleting %1 files").arg(clipboard.count) ,
                                          function() {
+                                             _fm.resetWatcher();
                                              for (var i=0; i<clipboard.count; i++) {
                                                  var curPath = clipboard.get(i).source
                                                  console.log("Deleting " + curPath + " with name " + clipboard.get(i).name);
