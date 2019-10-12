@@ -92,9 +92,6 @@ BackgroundItem {
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             checked: false
-            onClicked: {
-                checked = !checked
-            }
             onCheckedChanged: {
                 if (checked) {
                     clipboard.add(filePath,fileName)
