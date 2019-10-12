@@ -77,7 +77,12 @@ BackgroundItem {
             anchors.top: fileLabel.bottom
             text: fileIsDir ? fileModified.toLocaleString() : humanSize(fileSize) + ", " + fileModified.toLocaleString()
             color: Theme.secondaryColor
-            width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
+            width:  {
+                if (mSelect.visible)
+                    parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge + mSelect.width)
+                else
+                    parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
+            }
             truncationMode: TruncationMode.Fade
             font.pixelSize: Theme.fontSizeTiny
         }
