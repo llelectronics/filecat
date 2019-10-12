@@ -17,16 +17,17 @@ BackgroundItem {
     }
 
     function copy() {
+        clipboard.clear();
         _fm.moveMode = false;
         clipboard.add(filePath, fileName);
-        _fm.sourceUrl = clipboard.get(0).source;
-        //console.debug(_fm.sourceUrl)
+        console.debug("Copying " + filePath)
     }
 
     function move() {
+        clipboard.clear();
         _fm.moveMode = true;
         clipboard.add(filePath, fileName);
-        _fm.sourceUrl = clipboard.get(0).source;
+        console.debug("Moving " + filePath)
     }
 
     ListItem {
@@ -89,15 +90,16 @@ BackgroundItem {
         Switch {
             id: mSelect
             visible: multiSelect
+            enabled: visible
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
-            checked: false
+            checked: clipboard.contains(filePath) ? true : false
             onCheckedChanged: {
                 if (checked) {
                     clipboard.add(filePath,fileName)
                 }
                 else {
-                    clipboard.remove(filePath)
+                    clipboard.rm(filePath)
                 }
             }
         }

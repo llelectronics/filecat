@@ -25,7 +25,6 @@ DockedPanel {
                onClicked: {
                    console.log("Cut")
                    _fm.moveMode = true;
-                   _fm.sourceUrl = clipboard.count + qsTr(" Files")
                    multiSelect = false
                }
            }
@@ -35,7 +34,6 @@ DockedPanel {
                onClicked: {
                    console.log("Copy")
                    _fm.moveMode = false;
-                   _fm.sourceUrl = clipboard.count + qsTr(" Files")
                    multiSelect = false
                }
            }

@@ -28,12 +28,20 @@ ApplicationWindow
 //              name: "filename"
 //        }
         function add(path,name) {
-            append({"source":path, "name": name});
+            if (!contains(path)) append({"source":path, "name": name});
         }
-        function remove(path) {
+        function rm(path) {
             for (var i=0; i<count; i++) {
                 if (get(i).source === path) remove(i);
             }
+        }
+        function contains(path) {
+            for (var i=0; i<count; i++) {
+                if (get(i).source == path)  {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 

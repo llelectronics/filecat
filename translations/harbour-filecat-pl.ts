@@ -124,10 +124,6 @@
 <context>
     <name>MultiSelectBar</name>
     <message>
-        <source> Files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Deleting %1 files</source>
         <translation type="unfinished"></translation>
     </message>
@@ -200,6 +196,10 @@
     </message>
     <message>
         <source>File deletion succeeded</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Files</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

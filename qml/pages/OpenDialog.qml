@@ -272,10 +272,16 @@ Page {
 
             MenuItem {
                 id: pasteMenuEntry
-                visible: { if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) return true;
-                    else return false
+                visible: clipboard.count > 0
+                text: {
+                    var pasteTxt = qsTr("Paste") + " ("
+                    if (clipboard.count > 1)
+                        pasteTxt += clipboard.count + qsTr(" Files")
+                    else if (clipboard.count === 1)
+                        pasteTxt += clipboard.get(0).name
+                    pasteTxt += ")"
+                    return pasteTxt
                 }
-                text: qsTr("Paste") + "(" + findBaseName(_fm.sourceUrl) + ")"
                 onClicked: {
                     busyInd.running = true
                     _fm.resetWatcher();
