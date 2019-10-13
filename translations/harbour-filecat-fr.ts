@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionner</translation>
     </message>
 </context>
 <context>
@@ -125,7 +125,7 @@
     <name>MultiSelectBar</name>
     <message>
         <source>Deleting %1 files</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppression de %1 fichiers</translation>
     </message>
 </context>
 <context>
@@ -192,15 +192,15 @@
     </message>
     <message>
         <source>Error deleting file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur lors de la suppression des fichiers</translation>
     </message>
     <message>
         <source>File deletion succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Suppresion des fichiers corrèctement effectuée</translation>
     </message>
     <message>
         <source> Files</source>
-        <translation type="unfinished"></translation>
+        <translation> fichiers</translation>
     </message>
 </context>
 <context>
