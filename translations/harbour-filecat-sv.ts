@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj</translation>
     </message>
 </context>
 <context>
@@ -125,7 +125,7 @@
     <name>MultiSelectBar</name>
     <message>
         <source>Deleting %1 files</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort %1 fil(er)</translation>
     </message>
 </context>
 <context>
@@ -192,15 +192,15 @@
     </message>
     <message>
         <source>Error deleting file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte ta bort filerna</translation>
     </message>
     <message>
         <source>File deletion succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Filborttagning slutförd</translation>
     </message>
     <message>
         <source> Files</source>
-        <translation type="unfinished"></translation>
+        <translation> filer</translation>
     </message>
 </context>
 <context>
