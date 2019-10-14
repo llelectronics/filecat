@@ -6,7 +6,7 @@
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation>抱歉，无法显示图片</translation>
+        <translation>抱歉，无法显示图片。</translation>
     </message>
 </context>
 <context>
@@ -37,6 +37,33 @@
     <message>
         <source>Folder name</source>
         <translation>文件夹名称</translation>
+    </message>
+</context>
+<context>
+    <name>FileItemDelegate</name>
+    <message>
+        <source>Deleting </source>
+        <translation>删除</translation>
+    </message>
+    <message>
+        <source>Cut</source>
+        <translation>剪切</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation>复制</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation>删除</translation>
+    </message>
+    <message>
+        <source>Properties</source>
+        <translation>属性</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>选择</translation>
     </message>
 </context>
 <context>
@@ -83,11 +110,22 @@
     </message>
     <message>
         <source>Group</source>
-        <translation>组</translation>
+        <translation>群组</translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation>最近修改</translation>
+        <translation>上次修改</translation>
+    </message>
+    <message>
+        <source>Open with Texteditor</source>
+        <translation>用文本编辑器打开</translation>
+    </message>
+</context>
+<context>
+    <name>MultiSelectBar</name>
+    <message>
+        <source>Deleting %1 files</source>
+        <translation>正在删除 %1 个文件</translation>
     </message>
 </context>
 <context>
@@ -113,32 +151,56 @@
         <translation>属性</translation>
     </message>
     <message>
-        <source>Deleting </source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <source>directory</source>
-        <translation>目录</translation>
-    </message>
-    <message>
-        <source>Cut</source>
-        <translation>剪切</translation>
-    </message>
-    <message>
-        <source>Copy</source>
-        <translation>复制</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation>删除</translation>
-    </message>
-    <message>
         <source>Error pasting file </source>
         <translation>粘贴文件出错</translation>
     </message>
     <message>
         <source>File operation succeeded</source>
         <translation>文件操作成功</translation>
+    </message>
+    <message>
+        <source>Hide hidden files</source>
+        <translation>不显示隐藏文件</translation>
+    </message>
+    <message>
+        <source>Show hidden files</source>
+        <translation>显示隐藏文件</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation>名称</translation>
+    </message>
+    <message>
+        <source>Time</source>
+        <translation>时间</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>大小</translation>
+    </message>
+    <message>
+        <source>Type</source>
+        <translation>类型</translation>
+    </message>
+    <message>
+        <source>Sort by: </source>
+        <translation>分类方式：</translation>
+    </message>
+    <message>
+        <source>Saved directory to last known</source>
+        <translation>保存目录到上次已知位置</translation>
+    </message>
+    <message>
+        <source>Error deleting file(s)</source>
+        <translation>删除文件出错</translation>
+    </message>
+    <message>
+        <source>File deletion succeeded</source>
+        <translation>成功删除文件</translation>
+    </message>
+    <message>
+        <source> Files</source>
+        <translation>文件</translation>
     </message>
 </context>
 <context>
@@ -149,11 +211,11 @@
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation><在此输入 URL/translation>
+        <translation>在此输入 URL</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation>媒体文件URL </translation>
+        <translation>媒体文件URL</translation>
     </message>
 </context>
 <context>
@@ -192,7 +254,7 @@
     </message>
     <message>
         <source>Group</source>
-        <translation>组</translation>
+        <translation>群组</translation>
     </message>
     <message>
         <source>Others</source>
@@ -234,6 +296,10 @@
         <translation>视频</translation>
     </message>
     <message>
+        <source>Android Storage</source>
+        <translation>Android 储存</translation>
+    </message>
+    <message>
         <source>Places</source>
         <translation>位置</translation>
     </message>
@@ -251,7 +317,7 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation>正在删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -274,6 +340,13 @@
     </message>
 </context>
 <context>
+    <name>TextEditor</name>
+    <message>
+        <source>Save</source>
+        <translation>保存</translation>
+    </message>
+</context>
+<context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
@@ -288,7 +361,7 @@
     <name>VideoPlayerComponent</name>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation>下拉以加载文件或流媒体</translation>
+        <translation>下拉以加载文件或流</translation>
     </message>
     <message>
         <source>Dismiss</source>
@@ -298,27 +371,36 @@
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation>由于资源分配问题，视频无法播放。请务必登录以播放 YouTube 网站上的视频。有些视频可能被地理锁定，或者需要你登录到 youtube。</translation>
+        <translation>由于资源分配问题，视频无法播放。
+请务必登录 Youtube。有些视频可能被地理锁定，或者要求你登录 youtube 才能播放。</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation>不支持的音频及视频格式。</translation>
+        <translation>因文件格式不受支持，无法播放。</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation>因网络问题无法播放视频</translation>
+        <translation>因网络原因无法播放视频</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation>权限不足，无法播放视频</translation>
+        <translation>因权限不足无法播放视频</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation>因无法实例化媒体服务，无法播放视频。</translation>
+        <translation>因无法初始化服务无法播放视频。</translation>
+    </message>
+    <message>
+        <source>Zoomed to fit screen</source>
+        <translation>缩放以适应屏幕</translation>
+    </message>
+    <message>
+        <source>Original</source>
+        <translation>原始比例</translation>
     </message>
 </context>
 </TS>
