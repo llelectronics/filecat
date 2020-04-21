@@ -423,7 +423,15 @@ Page {
                 id: blocker;
                 anchors.fill: parent;
 
-                property alias source : imgViewer.source;
+                property alias source : imgViewer.source
+
+                function getCurIdx() {
+                    for (var i=0; i<fileModel.count; i++) {
+                        if (imgViewer.source === fileModel.get(i,"fileURL")) {
+                            return i;
+                        }
+                    }
+                }
 
                 Rectangle {
                     color: Qt.rgba (1.0 - Theme.primaryColor.r, 1.0 - Theme.primaryColor.g, 1.0 - Theme.primaryColor.b, 0.85);
@@ -439,6 +447,44 @@ Page {
                     }
 
                     property var root : mainWindow; // NOTE : to avoid QML warnings because it' baldy coded...
+                }
+                Row {
+                    id: imgControls
+                    anchors.bottom: parent.bottom
+                    anchors.bottomMargin: Theme.paddingMedium
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    spacing: width / 3 - openImgExternally.width / 2
+                    //visible: !imgViewer.scaled
+                    IconButton {
+                        id: prevImg
+                        icon.source: "image://theme/icon-m-back"
+                        onClicked: {
+                            imgViewer.resetScale();
+                            imgViewer.active = false;
+                            imgViewer.source = fileModel.get(blocker.getCurIdx() - 1, "fileURL")
+                            imgViewer.active = true;
+                        }
+                    }
+                    Button {
+                        id: openImgExternally
+                        text: qsTr("Open externally")
+                        onClicked: {
+                            mainWindow.infoBanner.parent = page
+                            mainWindow.infoBanner.anchors.top = page.top
+                            mainWindow.infoBanner.showText(qsTr("Opening..."));
+                            Qt.openUrlExternally(imgViewer.source)
+                        }
+                    }
+                    IconButton {
+                        id: nextImg
+                        icon.source: "image://theme/icon-m-forward"
+                        onClicked: {
+                            imgViewer.resetScale();
+                            imgViewer.active = false;
+                            imgViewer.source = fileModel.get(blocker.getCurIdx() + 1, "fileURL")
+                            imgViewer.active = true;
+                        }
+                    }
                 }
             }
         }

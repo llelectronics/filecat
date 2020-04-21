@@ -202,6 +202,10 @@
         <source> Files</source>
         <translation>文件</translation>
     </message>
+    <message>
+        <source>Open externally</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>

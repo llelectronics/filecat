@@ -202,6 +202,10 @@
         <source> Files</source>
         <translation> Файлов</translation>
     </message>
+    <message>
+        <source>Open externally</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
