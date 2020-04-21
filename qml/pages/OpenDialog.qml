@@ -448,6 +448,16 @@ Page {
 
                     property var root : mainWindow; // NOTE : to avoid QML warnings because it' baldy coded...
                 }
+                BusyIndicator {
+                    running: imgViewer.photo.status === Image.Loading && !delayBusyIndicator.running
+                    size: BusyIndicatorSize.Large
+                    anchors.centerIn: parent
+                    Timer {
+                        id: delayBusyIndicator
+                        running: imgViewer.photo.status === Image.Loading
+                        interval: 1000
+                    }
+                }
                 Row {
                     id: imgControls
                     anchors.bottom: parent.bottom
