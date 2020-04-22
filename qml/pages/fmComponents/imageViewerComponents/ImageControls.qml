@@ -21,7 +21,7 @@ DockedPanel {
         anchors.bottom: parent.bottom
         anchors.bottomMargin: Theme.paddingMedium
         anchors.horizontalCenter: parent.horizontalCenter
-        spacing: width / 3 - openImgExternally.width / 2
+        spacing: Theme.paddingLarge
         //visible: !viewer.scaled
         IconButton {
             id: prevImg

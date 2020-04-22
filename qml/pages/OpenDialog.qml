@@ -446,6 +446,7 @@ Page {
                     onClicked: {
                         blocker.destroy ();
                     }
+                    onPressAndHold: imageControls.open = !imageControls.open
 
                     property var root : mainWindow; // NOTE : to avoid QML warnings because it' baldy coded...
                 }
@@ -460,6 +461,7 @@ Page {
                     }
                 }
                 ImageControls {
+                    id: imageControls
                     viewer: imgViewer
                     open: true
                 }
