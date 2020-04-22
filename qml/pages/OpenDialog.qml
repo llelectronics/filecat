@@ -433,6 +433,16 @@ Page {
                         }
                     }
                 }
+                Component.onCompleted: {
+                    page.showNavigationIndicator = false
+                    page.backNavigation = false
+                    page.forwardNavigation = false
+                }
+                Component.onDestruction: {
+                    page.showNavigationIndicator = true
+                    page.backNavigation = true
+                    page.forwardNavigation = true
+                }
 
                 Rectangle {
                     color: Qt.rgba (1.0 - Theme.primaryColor.r, 1.0 - Theme.primaryColor.g, 1.0 - Theme.primaryColor.b, 0.85);
@@ -444,11 +454,20 @@ Page {
                     active: true;
                     anchors.fill: parent;
                     onClicked: {
-                        blocker.destroy ();
+                        imageControls.open = !imageControls.open
                     }
-                    onPressAndHold: imageControls.open = !imageControls.open
+                    onPressAndHold: blocker.destroy ();
 
                     property var root : mainWindow; // NOTE : to avoid QML warnings because it' baldy coded...
+                }
+                IconButton {
+                    id: closeImg
+                    icon.source: "image://theme/icon-m-cancel"
+                    anchors.top: imgViewer.top
+                    anchors.right: imgViewer.right
+                    onClicked: {
+                        blocker.destroy();
+                    }
                 }
                 BusyIndicator {
                     running: imgViewer.photo.status === Image.Loading && !delayBusyIndicator.running
