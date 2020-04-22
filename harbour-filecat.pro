@@ -24,6 +24,7 @@ DISTFILES += qml/harbour-filecat.qml \
     qml/pages/fmComponents/FileItemDelegate.qml \
     qml/pages/fmComponents/MultiSelectBar.qml \
     qml/pages/fmComponents/TextEditor.qml \
+    qml/pages/fmComponents/imageViewerComponents/ImageControls.qml \
     qml/pages/fmComponents/mimetypeIcons.js \
     rpm/harbour-filecat.changes.in \
     rpm/harbour-filecat.changes.run.in \

@@ -6,7 +6,7 @@
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>Bild konnte nicht geladen werden</translation>
     </message>
 </context>
 <context>
@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Markieren</translation>
     </message>
 </context>
 <context>
@@ -122,10 +122,21 @@
     </message>
 </context>
 <context>
+    <name>ImageControls</name>
+    <message>
+        <source>Open externally</source>
+        <translation>Extern öffnen</translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Öffne...</translation>
+    </message>
+</context>
+<context>
     <name>MultiSelectBar</name>
     <message>
         <source>Deleting %1 files</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösche %1 Datei(en)</translation>
     </message>
 </context>
 <context>
@@ -192,19 +203,15 @@
     </message>
     <message>
         <source>Error deleting file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen fehlgeschlagen</translation>
     </message>
     <message>
         <source>File deletion succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>Löschen erfolgreich</translation>
     </message>
     <message>
         <source> Files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open externally</source>
-        <translation>Extern öffnen</translation>
+        <translation> Dateien</translation>
     </message>
 </context>
 <context>

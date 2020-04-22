@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import harbour.filecat.FolderListModel 1.0
 import Nemo.Configuration 1.0
 import "fmComponents"
+import "fmComponents/imageViewerComponents"
 
 Page {
     id: page
@@ -458,43 +459,9 @@ Page {
                         interval: 1000
                     }
                 }
-                Row {
-                    id: imgControls
-                    anchors.bottom: parent.bottom
-                    anchors.bottomMargin: Theme.paddingMedium
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    spacing: width / 3 - openImgExternally.width / 2
-                    //visible: !imgViewer.scaled
-                    IconButton {
-                        id: prevImg
-                        icon.source: "image://theme/icon-m-back"
-                        onClicked: {
-                            imgViewer.resetScale();
-                            imgViewer.active = false;
-                            imgViewer.source = fileModel.get(blocker.getCurIdx() - 1, "fileURL")
-                            imgViewer.active = true;
-                        }
-                    }
-                    Button {
-                        id: openImgExternally
-                        text: qsTr("Open externally")
-                        onClicked: {
-                            mainWindow.infoBanner.parent = page
-                            mainWindow.infoBanner.anchors.top = page.top
-                            mainWindow.infoBanner.showText(qsTr("Opening..."));
-                            Qt.openUrlExternally(imgViewer.source)
-                        }
-                    }
-                    IconButton {
-                        id: nextImg
-                        icon.source: "image://theme/icon-m-forward"
-                        onClicked: {
-                            imgViewer.resetScale();
-                            imgViewer.active = false;
-                            imgViewer.source = fileModel.get(blocker.getCurIdx() + 1, "fileURL")
-                            imgViewer.active = true;
-                        }
-                    }
+                ImageControls {
+                    viewer: imgViewer
+                    open: true
                 }
             }
         }

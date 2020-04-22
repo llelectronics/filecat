@@ -122,6 +122,17 @@
     </message>
 </context>
 <context>
+    <name>ImageControls</name>
+    <message>
+        <source>Open externally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Abriendo...</translation>
+    </message>
+</context>
+<context>
     <name>MultiSelectBar</name>
     <message>
         <source>Deleting %1 files</source>
@@ -200,10 +211,6 @@
     </message>
     <message>
         <source> Files</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open externally</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

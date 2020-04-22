@@ -122,6 +122,17 @@
     </message>
 </context>
 <context>
+    <name>ImageControls</name>
+    <message>
+        <source>Open externally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>正在打开……</translation>
+    </message>
+</context>
+<context>
     <name>MultiSelectBar</name>
     <message>
         <source>Deleting %1 files</source>
@@ -201,10 +212,6 @@
     <message>
         <source> Files</source>
         <translation>文件</translation>
-    </message>
-    <message>
-        <source>Open externally</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
