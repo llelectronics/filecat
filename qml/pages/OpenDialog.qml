@@ -2,6 +2,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.filecat.FolderListModel 1.0
 import Nemo.Configuration 1.0
+import Sailfish.Pickers 1.0
 import "fmComponents"
 import "fmComponents/imageViewerComponents"
 
@@ -28,6 +29,8 @@ Page {
     property QtObject dataContainer
     property QtObject imgView
 
+    property alias contentPickerPage: contentPickerPage
+
     signal fileOpen(string path);
 
    property var customPlaces: [
@@ -38,6 +41,9 @@ Page {
 //       }
    ]
 
+    function openSearch() {
+        pageStack.push(contentPickerPage)
+    }
 
     ConfigurationGroup {
         id: customPlacesSettings
@@ -486,6 +492,16 @@ Page {
                 }
             }
         }
+
+    Component {
+        id: contentPickerPage
+        ContentPickerPage {
+            title: qsTr("Search file")
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
 
     Item {
         id: overlay;

@@ -110,6 +110,16 @@ Page {
             title: qsTr("Places")
         }
 
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Search")
+                onClicked: {
+                    pageStack.navigateBack(PageStackAction.Immediate)
+                    father.openSearch();
+                }
+            }
+        }
+
         // Section Device
         Item {
             id: secDevices

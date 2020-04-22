@@ -213,6 +213,10 @@
         <source> Files</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Search file</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -333,6 +337,10 @@
     <message>
         <source>Rename</source>
         <translation>Μετονομασία</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
