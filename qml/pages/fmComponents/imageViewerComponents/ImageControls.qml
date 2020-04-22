@@ -5,7 +5,7 @@ DockedPanel {
 
     property QtObject viewer
 
-    width: viewer.photo.width
+    width: (viewer.photo.width > imgControls.childrenRect.width) ? viewer.photo.width : imgControls.childrenRect.width
     height: imgControls.height + Theme.paddingLarge
     contentHeight: height
     anchors.horizontalCenter: parent.horizontalCenter
