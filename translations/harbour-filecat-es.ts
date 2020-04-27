@@ -339,10 +339,6 @@
         <translation>Lugares</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -365,6 +361,14 @@
     <message>
         <source>Rename</source>
         <translation>Renombrar</translation>
+    </message>
+    <message>
+        <source>Network Drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Abriendo...</translation>
     </message>
 </context>
 <context>

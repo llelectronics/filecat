@@ -339,10 +339,6 @@
         <translation>Miejsca</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation>Wyszukaj</translation>
-    </message>
-    <message>
         <source>Data</source>
         <translation>Data</translation>
     </message>
@@ -365,6 +361,14 @@
     <message>
         <source>Rename</source>
         <translation>Zmień nazwę</translation>
+    </message>
+    <message>
+        <source>Network Drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Otwieranie...</translation>
     </message>
 </context>
 <context>

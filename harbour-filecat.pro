@@ -63,6 +63,7 @@ HEADERS += \
     src/folderlistmodel/fileinfothread_p.h \
     src/folderlistmodel/fileproperty_p.h \
     src/folderlistmodel/qquickfolderlistmodel.h \
+    src/process.hpp \
     src/videohelper.hpp
 
 CONFIG += c++11

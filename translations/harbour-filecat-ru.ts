@@ -339,10 +339,6 @@
         <translation>Места</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation>Поиск</translation>
-    </message>
-    <message>
         <source>Data</source>
         <translation>Данные</translation>
     </message>
@@ -365,6 +361,14 @@
     <message>
         <source>Rename</source>
         <translation>Переименовать</translation>
+    </message>
+    <message>
+        <source>Network Drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Открытие...</translation>
     </message>
 </context>
 <context>

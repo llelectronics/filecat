@@ -7,6 +7,7 @@
 #include "folderlistmodel/qquickfolderlistmodel.h"
 #include "videohelper.hpp"
 #include "fileio.h"
+#include "process.hpp"
 
 #include <QQuickView>
 #include <QGuiApplication>
@@ -28,6 +29,7 @@ int main(int argc, char *argv[])
     QGuiApplication *app = SailfishApp::application(argc, argv);
 
     qmlRegisterType<QQuickFolderListModel>("harbour.filecat.FolderListModel", 1, 0, "FolderListModel");
+    qmlRegisterType<Process>("Process", 1, 0, "Process");
 
     app->setApplicationVersion("1.0.0");
     QQuickView *view = SailfishApp::createView();

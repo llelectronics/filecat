@@ -142,10 +142,13 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTr("Search")
+                text: qsTr("Network Drives")
+                visible: _fm.isFile("/usr/bin/fishnetmount-gui")
                 onClicked: {
-                    pageStack.navigateBack(PageStackAction.Immediate)
-                    father.openSearch();
+                    mainWindow.infoBanner.parent = root
+                    mainWindow.infoBanner.anchors.top = root.top
+                    mainWindow.infoBanner.showText(qsTr("Opening..."))
+                    process.start("/usr/bin/fishnetmount-gui", [""])
                 }
             }
         }

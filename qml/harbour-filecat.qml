@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Process 1.0
 import "pages"
 
 ApplicationWindow
@@ -19,6 +20,10 @@ ApplicationWindow
     property bool isLightTheme: {
         if (Theme.colorScheme == Theme.LightOnDark) return false
         else return true
+    }
+
+    Process {
+        id: process
     }
 
     ListModel {

@@ -339,10 +339,6 @@
         <translation>Orte</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation>Suche</translation>
-    </message>
-    <message>
         <source>Data</source>
         <translation>Daten</translation>
     </message>
@@ -365,6 +361,14 @@
     <message>
         <source>Rename</source>
         <translation>Umbenennen</translation>
+    </message>
+    <message>
+        <source>Network Drives</source>
+        <translation>Netzwerklaufwerke</translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Öffne...</translation>
     </message>
 </context>
 <context>

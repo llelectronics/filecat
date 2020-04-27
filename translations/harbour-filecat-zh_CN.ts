@@ -339,10 +339,6 @@
         <translation>位置</translation>
     </message>
     <message>
-        <source>Search</source>
-        <translation>搜索</translation>
-    </message>
-    <message>
         <source>Data</source>
         <translation>数据</translation>
     </message>
@@ -365,6 +361,14 @@
     <message>
         <source>Rename</source>
         <translation>重命名</translation>
+    </message>
+    <message>
+        <source>Network Drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>正在打开……</translation>
     </message>
 </context>
 <context>
