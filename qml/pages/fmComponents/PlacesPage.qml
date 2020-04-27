@@ -160,7 +160,7 @@ Page {
             clip: true
             
             SectionHeader { id: dataHeader; text: qsTr("Data") }
-            
+
             Row {
                 id: pickersGrid
                 anchors.top: dataHeader.bottom
@@ -205,7 +205,7 @@ Page {
                             anchors.topMargin: Theme.paddingLarge
                             text: name
                             truncationMode: TruncationMode.Fade
-                            font.pixelSize: Theme.fontSizeExtraSmall
+                            font.pixelSize: Theme.fontSizeTiny
                             anchors.horizontalCenter: icoButton.horizontalCenter
                         }
                     } // Item
