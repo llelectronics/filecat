@@ -45,6 +45,14 @@ Page {
         pageStack.push(contentPickerPage)
     }
 
+    function openPicker(picker) {
+       if (picker === "docDir") pageStack.push(documentPickerPage)
+       else if (picker === "dowDir") pageStack.push(downloadPickerPage)
+       else if (picker === "picDir") pageStack.push(imagePickerPage)
+       else if (picker === "musDir") pageStack.push(musicPickerPage)
+       else if (picker === "vidDir") pageStack.push(videoPickerPage)
+    }
+
     ConfigurationGroup {
         id: customPlacesSettings
         path: "/apps/harbour-llsfileman" // DO NOT CHANGE to share custom places between apps
@@ -502,6 +510,53 @@ Page {
             }
         }
     }
+    Component {
+        id: documentPickerPage
+        DocumentPickerPage {
+            title: qsTr("Documents")
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: downloadPickerPage
+        DownloadPickerPage {
+            title: qsTr("Downloads")
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: musicPickerPage
+        MusicPickerPage {
+            title: qsTr("Music")
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: imagePickerPage
+        ImagePickerPage {
+            title: qsTr("Pictures")
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: videoPickerPage
+        VideoPickerPage {
+            title: qsTr("Videos")
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+
+
 
     Item {
         id: overlay;

@@ -26,6 +26,36 @@ Page {
     //        icon: "image://theme/icon-m-phone"
     //        }
     //        ]
+    
+    ListModel {
+        id: pickerModel
+
+        ListElement {
+            name: qsTr("Documents")
+            uid: "docDir"
+            ico: "image://theme/icon-m-document"
+        }
+        ListElement {
+            name: qsTr("Downloads")
+            uid: "dowDir"
+            ico: "image://theme/icon-m-cloud-download"
+        }
+        ListElement {
+            name: qsTr("Music")
+            uid: "musDir"
+            ico: "image://theme/icon-m-sounds"
+        }
+        ListElement {
+            name: qsTr("Pictures")
+            uid: "picDir"
+            ico: "image://theme/icon-m-image"
+        }
+        ListElement {
+            name: qsTr("Videos")
+            uid: "vidDir"
+            ico: "image://theme/icon-m-media"
+        }
+    }
 
     property var devicesModel: [
          {
@@ -103,7 +133,7 @@ Page {
 
     SilicaFlickable {
         anchors.fill: parent
-        contentHeight: head.height + secDevices.height + secPlaces.height + cusPlaces.height + Theme.paddingLarge
+        contentHeight: head.height + pickerSection.height + secDevices.height + secPlaces.height + cusPlaces.height + Theme.paddingLarge
 
         PageHeader {
             id: head
@@ -119,13 +149,77 @@ Page {
                 }
             }
         }
+        
+        // Pickers
+        Item {
+            id: pickerSection
+            width: parent.width
+            height: pickersGrid.height
+            anchors.top: head.bottom
+            anchors.topMargin: Theme.paddingSmall
+            clip: true
+            
+            SectionHeader { id: dataHeader; text: qsTr("Data") }
+            
+            Row {
+                id: pickersGrid
+                anchors.top: dataHeader.bottom
+                height: childrenRect.height
+                width: parent.width - Theme.paddingMedium * 2
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.leftMargin: Theme.paddingLarge
+                anchors.rightMargin: Theme.paddingLarge
+                spacing: Theme.paddingMedium
+                Repeater {
+                    model: pickerModel
+                    height: delegate.height
+                    delegate: Item {
+                        width: (Theme.itemSizeMedium > icoLbl.width) ? Theme.itemSizeMedium : icoLbl.width
+                        height: childrenRect.height + icoLbl.height + Theme.paddingLarge * 2
+                        anchors.leftMargin: Theme.paddingMedium
+                        anchors.rightMargin: Theme.paddingMedium
+
+                        IconButton {
+                            id: icoButton
+                            height: Theme.iconSizeMedium
+                            width: Theme.iconSizeMedium
+                            icon.source: ico
+                            onClicked: { pageStack.navigateBack(PageStackAction.Immediate) ; father.openPicker(uid) }
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                        Rectangle {
+                            id: icoButtonCircle
+                            width: icoButton.width + Theme.paddingMedium
+                            height: icoButton.height + Theme.paddingMedium
+                            color: "transparent"
+                            border.color: Theme.primaryColor
+                            border.width: 2
+                            radius: width / 2
+                            anchors.centerIn: icoButton
+                        }
+
+                        Label {
+                            id: icoLbl
+                            anchors.top: icoButton.bottom
+                            anchors.topMargin: Theme.paddingLarge
+                            text: name
+                            truncationMode: TruncationMode.Fade
+                            font.pixelSize: Theme.fontSizeExtraSmall
+                            anchors.horizontalCenter: icoButton.horizontalCenter
+                        }
+                    } // Item
+                } // Repeater
+                
+            }
+        }
 
         // Section Device
         Item {
             id: secDevices
             width: parent.width
             height: devicesList.height + devicesHeader.height
-            anchors.top: head.bottom
+            anchors.top: pickerSection.bottom
             anchors.topMargin: Theme.paddingSmall
             clip: true
 
