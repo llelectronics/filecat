@@ -125,7 +125,7 @@
     <name>ImageControls</name>
     <message>
         <source>Open externally</source>
-        <translation type="unfinished"></translation>
+        <translation>用外部软件打开</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -215,27 +215,27 @@
     </message>
     <message>
         <source>Search file</source>
-        <translation type="unfinished"></translation>
+        <translation>搜索文件</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>文档</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>下载</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>音乐</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>视频</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>图片</translation>
     </message>
 </context>
 <context>
@@ -300,71 +300,71 @@
     <name>PlacesPage</name>
     <message>
         <source>Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>文档</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation>下载</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation type="unfinished"></translation>
+        <translation>音乐</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation type="unfinished"></translation>
+        <translation>图片</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation type="unfinished"></translation>
+        <translation>视频</translation>
     </message>
     <message>
         <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <translation>设备储存</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>储存卡</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>主页</translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation type="unfinished"></translation>
+        <translation>Android存储</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation type="unfinished"></translation>
+        <translation>位置</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation type="unfinished"></translation>
+        <translation>搜索</translation>
     </message>
     <message>
         <source>Data</source>
-        <translation type="unfinished"></translation>
+        <translation>数据</translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation type="unfinished"></translation>
+        <translation>设备</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation type="unfinished"></translation>
+        <translation>一般</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>自定义</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation type="unfinished">删除</translation>
+        <translation>删除</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished">重命名</translation>
+        <translation>重命名</translation>
     </message>
 </context>
 <context>
