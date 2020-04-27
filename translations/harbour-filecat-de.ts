@@ -215,7 +215,27 @@
     </message>
     <message>
         <source>Search file</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateien suchen</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation>Dokumente</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation>Downloads</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation>Musik</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation>Videos</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation>Bilder</translation>
     </message>
 </context>
 <context>
@@ -279,18 +299,6 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Gerätespeicher</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>SD-Speicherkarte</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Benutzerverzeichnis</translation>
-    </message>
-    <message>
         <source>Documents</source>
         <translation>Dokumente</translation>
     </message>
@@ -311,12 +319,32 @@
         <translation>Videos</translation>
     </message>
     <message>
+        <source>Device memory</source>
+        <translation>Gerätespeicher</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation>SD-Speicherkarte</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Benutzerverzeichnis</translation>
+    </message>
+    <message>
         <source>Android Storage</source>
         <translation>Android Datenspeicher</translation>
     </message>
     <message>
         <source>Places</source>
         <translation>Orte</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation>Suche</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Daten</translation>
     </message>
     <message>
         <source>Devices</source>
@@ -337,10 +365,6 @@
     <message>
         <source>Rename</source>
         <translation>Umbenennen</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
