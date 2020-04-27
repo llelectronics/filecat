@@ -170,7 +170,7 @@ Page {
                 anchors.right: parent.right
                 anchors.leftMargin: Theme.paddingLarge
                 anchors.rightMargin: Theme.paddingLarge
-                spacing: Theme.paddingMedium
+                spacing: (parent.width - 7*(Theme.iconSizeMedium+Theme.paddingMedium)) / 8
                 Repeater {
                     model: pickerModel
                     height: delegate.height
