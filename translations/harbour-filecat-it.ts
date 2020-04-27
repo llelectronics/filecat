@@ -217,6 +217,26 @@
         <source>Search file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Documents</source>
+        <translation>Documenti</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation>Scaricati</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation>Musica</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation>Video</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation>Immagini</translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -279,18 +299,6 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Memoria dispositivo</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>Scheda SD</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Home</translation>
-    </message>
-    <message>
         <source>Documents</source>
         <translation>Documenti</translation>
     </message>
@@ -311,12 +319,32 @@
         <translation>Video</translation>
     </message>
     <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Android Storage</source>
-        <translation>Memoria Android</translation>
+        <translation>Memoria Android<</translation>
     </message>
     <message>
         <source>Places</source>
         <translation>Posizioni</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Devices</source>
@@ -337,10 +365,6 @@
     <message>
         <source>Rename</source>
         <translation>Rinomina</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

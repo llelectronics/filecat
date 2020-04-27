@@ -217,6 +217,26 @@
         <source>Search file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Documents</source>
+        <translation>Documenten</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation>Downloads</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation>Muziek</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation>Video’s</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation>Afbeeldingen</translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -279,18 +299,6 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Intern geheugen</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>SD-kaart</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Persoonlijke map</translation>
-    </message>
-    <message>
         <source>Documents</source>
         <translation>Documenten</translation>
     </message>
@@ -311,12 +319,32 @@
         <translation>Video’s</translation>
     </message>
     <message>
+        <source>Device memory</source>
+        <translation>Intern geheugen</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation>SD-kaart</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Persoonlijke map</translation>
+    </message>
+    <message>
         <source>Android Storage</source>
         <translation>Android-opslag</translation>
     </message>
     <message>
         <source>Places</source>
         <translation>Plekken</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Devices</source>
@@ -337,10 +365,6 @@
     <message>
         <source>Rename</source>
         <translation>Hernoemen</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

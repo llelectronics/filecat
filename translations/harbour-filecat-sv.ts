@@ -217,6 +217,26 @@
         <source>Search file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -279,68 +299,72 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Enhetens minne</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>SD-kort</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Hem</translation>
-    </message>
-    <message>
         <source>Documents</source>
-        <translation>Dokument</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Nerladdningar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Musik</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Bilder</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>Videor</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation>Android-lagring</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>Platser</translation>
-    </message>
-    <message>
-        <source>Devices</source>
-        <translation>Enheter</translation>
-    </message>
-    <message>
-        <source>Common</source>
-        <translation>Gemensamma</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>Anpassat</translation>
-    </message>
-    <message>
-        <source>Deleting </source>
-        <translation>Tar bort </translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Byt namn</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Tar bort </translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished">Byt namn</translation>
     </message>
 </context>
 <context>

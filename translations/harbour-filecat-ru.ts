@@ -217,6 +217,26 @@
         <source>Search file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -279,68 +299,72 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Внутренняя память</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>SD-карта</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Домашняя папка</translation>
-    </message>
-    <message>
         <source>Documents</source>
-        <translation>Документы</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Загрузки</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Музыка</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Изображения</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>Видео</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation>Хранилище Android</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>Места</translation>
-    </message>
-    <message>
-        <source>Devices</source>
-        <translation>Устройства</translation>
-    </message>
-    <message>
-        <source>Common</source>
-        <translation>Стандартные</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>Личные</translation>
-    </message>
-    <message>
-        <source>Deleting </source>
-        <translation>Удаление </translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Переименовать</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Удаление</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished">Переименовать</translation>
     </message>
 </context>
 <context>

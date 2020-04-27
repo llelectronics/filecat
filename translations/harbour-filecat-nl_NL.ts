@@ -217,6 +217,26 @@
         <source>Search file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -279,68 +299,72 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Intern geheugen</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>SD-kaart</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Persoonlijke map</translation>
-    </message>
-    <message>
         <source>Documents</source>
-        <translation>Documenten</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Downloads</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Muziek</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Afbeeldingen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>Video’s</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation>Android-opslag</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>Plaatsen</translation>
-    </message>
-    <message>
-        <source>Devices</source>
-        <translation>Apparaten</translation>
-    </message>
-    <message>
-        <source>Common</source>
-        <translation>Algemeen</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>Aangepast</translation>
-    </message>
-    <message>
-        <source>Deleting </source>
-        <translation>Wordt verwijderd</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Hernoemen</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">Wordt verwijderd</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished">Hernoemen</translation>
     </message>
 </context>
 <context>

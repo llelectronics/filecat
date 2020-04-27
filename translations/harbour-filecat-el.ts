@@ -217,6 +217,26 @@
         <source>Search file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -279,18 +299,6 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Μνήμη συσκευής</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>Κάρτα SD</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Home</translation>
-    </message>
-    <message>
         <source>Documents</source>
         <translation>Έγγραφα</translation>
     </message>
@@ -311,12 +319,32 @@
         <translation>Βίντεο</translation>
     </message>
     <message>
+        <source>Device memory</source>
+        <translation>Μνήμη συσκευής</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation>Κάρτα SD</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Home</translation>
+    </message>
+    <message>
         <source>Android Storage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Places</source>
         <translation>Μέρη</translation>
+    </message>
+    <message>
+        <source>Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Devices</source>
@@ -332,15 +360,11 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Διαγραφή</translation>
+        <translation>Διαγραφή </translation>
     </message>
     <message>
         <source>Rename</source>
         <translation>Μετονομασία</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

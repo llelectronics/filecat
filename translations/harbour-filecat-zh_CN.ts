@@ -217,6 +217,26 @@
         <source>Search file</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Documents</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -279,68 +299,72 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>设备存储</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>SD卡</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>主页</translation>
-    </message>
-    <message>
         <source>Documents</source>
-        <translation>文档</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>下载</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>音乐</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>图片</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>视频</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Device memory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation>Android 储存</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>位置</translation>
-    </message>
-    <message>
-        <source>Devices</source>
-        <translation>设备</translation>
-    </message>
-    <message>
-        <source>Common</source>
-        <translation>通用</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>自定义</translation>
-    </message>
-    <message>
-        <source>Deleting </source>
-        <translation>删除</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>重命名</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Search</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Common</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Deleting </source>
+        <translation type="unfinished">删除</translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished">重命名</translation>
     </message>
 </context>
 <context>
