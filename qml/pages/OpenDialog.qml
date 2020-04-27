@@ -436,6 +436,7 @@ Page {
 
             TouchBlocker {
                 id: blocker;
+                parent: pageStack.currentPage
                 anchors.fill: parent;
 
                 property alias source : imgViewer.source

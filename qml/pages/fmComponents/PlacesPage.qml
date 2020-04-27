@@ -185,7 +185,7 @@ Page {
                             height: Theme.iconSizeMedium
                             width: Theme.iconSizeMedium
                             icon.source: ico
-                            onClicked: { pageStack.navigateBack(PageStackAction.Immediate) ; father.openPicker(uid) }
+                            onClicked: father.openPicker(uid)
                             anchors.horizontalCenter: parent.horizontalCenter
                         }
                         Rectangle {
