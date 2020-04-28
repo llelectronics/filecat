@@ -33,7 +33,7 @@ Page {
         ListElement {
             name: qsTr("Documents")
             uid: "docDir"
-            ico: "image://theme/icon-m-document"
+            ico: "image://theme/icon-m-file-document"
         }
         ListElement {
             name: qsTr("Downloads")
@@ -48,7 +48,7 @@ Page {
         ListElement {
             name: qsTr("Pictures")
             uid: "picDir"
-            ico: "image://theme/icon-m-image"
+            ico: "image://theme/icon-m-file-image"
         }
         ListElement {
             name: qsTr("Videos")
@@ -79,7 +79,7 @@ Page {
         {
             name: qsTr("Documents"),
             path: docDir,
-            icon: "image://theme/icon-m-document"
+            icon: "image://theme/icon-m-file-document"
         },
         {
             name: qsTr("Downloads"),
@@ -94,7 +94,7 @@ Page {
         {
             name: qsTr("Pictures"),
             path: picDir,
-            icon: "image://theme/icon-m-image"
+            icon: "image://theme/icon-m-file-image"
         },
         {
             name: qsTr("Videos"),
