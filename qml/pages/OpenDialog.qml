@@ -516,6 +516,7 @@ Page {
         id: documentPickerPage
         DocumentPickerPage {
             title: qsTr("Documents")
+            allowedOrientations: Orientation.All
             onSelectedContentPropertiesChanged: {
                 openFile(selectedContentProperties.filePath)
             }
@@ -525,6 +526,7 @@ Page {
         id: downloadPickerPage
         DownloadPickerPage {
             title: qsTr("Downloads")
+            allowedOrientations: Orientation.All
             onSelectedContentPropertiesChanged: {
                 openFile(selectedContentProperties.filePath)
             }
@@ -534,6 +536,7 @@ Page {
         id: musicPickerPage
         MusicPickerPage {
             title: qsTr("Music")
+            allowedOrientations: Orientation.All
             onSelectedContentPropertiesChanged: {
                 openFile(selectedContentProperties.filePath)
             }
@@ -543,6 +546,7 @@ Page {
         id: imagePickerPage
         ImagePickerPage {
             title: qsTr("Pictures")
+            allowedOrientations: Orientation.All
             onSelectedContentPropertiesChanged: {
                 openFile(selectedContentProperties.filePath)
             }
@@ -552,6 +556,7 @@ Page {
         id: videoPickerPage
         VideoPickerPage {
             title: qsTr("Videos")
+            allowedOrientations: Orientation.All
             onSelectedContentPropertiesChanged: {
                 openFile(selectedContentProperties.filePath)
             }
