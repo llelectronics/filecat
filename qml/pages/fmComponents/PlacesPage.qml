@@ -151,6 +151,15 @@ Page {
                     process.start("/usr/bin/fishnetmount-gui", [""])
                 }
             }
+            MenuItem {
+                text: qsTr("Storage Information")
+                onClicked: {
+                    mainWindow.infoBanner.parent = root
+                    mainWindow.infoBanner.anchors.top = root.top
+                    mainWindow.infoBanner.showText(qsTr("Opening..."))
+                    process.start("/usr/bin/dbus-send", ["--session", "--print-reply", "--dest=com.jolla.settings", "/com/jolla/settings/ui", "com.jolla.settings.ui.showPage", "string:system_settings/system/storage"])
+                }
+            }
         }
         
         // Pickers

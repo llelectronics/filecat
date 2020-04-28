@@ -370,6 +370,10 @@
         <source>Opening...</source>
         <translation>Öffne...</translation>
     </message>
+    <message>
+        <source>Storage Information</source>
+        <translation>Speicherinformationen</translation>
+    </message>
 </context>
 <context>
     <name>RenameDialog</name>
