@@ -480,6 +480,7 @@ Page {
                     icon.source: "image://theme/icon-m-cancel"
                     anchors.top: imgViewer.top
                     anchors.right: imgViewer.right
+                    visible: imageControls.open
                     onClicked: {
                         blocker.destroy();
                     }
