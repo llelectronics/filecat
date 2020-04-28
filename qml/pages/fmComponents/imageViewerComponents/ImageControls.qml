@@ -10,6 +10,29 @@ DockedPanel {
     contentHeight: height
     anchors.horizontalCenter: parent.horizontalCenter
 
+    function checkMime(path) {
+        var mime = _fm.getMime(path);
+        var mimeinfo = mime.toString().split("/");
+        if (mimeinfo[0] === "image") {
+            return true
+        }
+        return false
+    }
+
+    function checkPrev() {
+        if (checkMime(fileModel.get(blocker.getCurIdx() - 1, "fileURL"))) return fileModel.get(blocker.getCurIdx() - 1, "fileURL")
+        else if (checkMime(fileModel.get(blocker.getCurIdx() - 2, "fileURL"))) return fileModel.get(blocker.getCurIdx() - 2, "fileURL")
+        else if (checkMime(fileModel.get(blocker.getCurIdx() - 3, "fileURL"))) return fileModel.get(blocker.getCurIdx() - 3, "fileURL")
+        else return "false"
+    }
+
+    function checkNext() {
+        if (checkMime(fileModel.get(blocker.getCurIdx() + 1, "fileURL"))) return fileModel.get(blocker.getCurIdx() + 1, "fileURL")
+        else if (checkMime(fileModel.get(blocker.getCurIdx() + 2, "fileURL"))) return fileModel.get(blocker.getCurIdx() + 2, "fileURL")
+        else if (checkMime(fileModel.get(blocker.getCurIdx() + 3, "fileURL"))) return fileModel.get(blocker.getCurIdx() + 3, "fileURL")
+        else return "false"
+    }
+
     Rectangle {
         anchors.fill: parent
         color: Theme.overlayBackgroundColor
@@ -26,10 +49,12 @@ DockedPanel {
         IconButton {
             id: prevImg
             icon.source: "image://theme/icon-m-back"
+            visible: (checkPrev() !== "false") ? true: false
+
             onClicked: {
                 viewer.resetScale();
                 viewer.active = false;
-                viewer.source = fileModel.get(blocker.getCurIdx() - 1, "fileURL")
+                viewer.source = checkPrev();
                 viewer.active = true;
             }
         }
@@ -46,10 +71,11 @@ DockedPanel {
         IconButton {
             id: nextImg
             icon.source: "image://theme/icon-m-forward"
+            visible: (checkNext() !== "false") ? true: false
             onClicked: {
                 viewer.resetScale();
                 viewer.active = false;
-                viewer.source = fileModel.get(blocker.getCurIdx() + 1, "fileURL")
+                viewer.source = checkNext();
                 viewer.active = true;
             }
         }
