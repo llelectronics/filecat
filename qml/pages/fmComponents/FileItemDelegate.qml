@@ -162,6 +162,13 @@ BackgroundItem {
                 }
             }
             MenuItem {
+                text: qsTr("Share")
+                visible: false //!fileIsDir
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SharePage.qml"), {"filePath": filePath})
+                }
+            }
+            MenuItem {
                 text: qsTr("Properties")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("FileProperties.qml"), {"path": filePath, dataContainer: dataContainer, "fileIcon": fileIcon.source, "fileSize": humanSize(fileSize), "fileModified": fileModified, "fileIsDir": fileIsDir, "father": page})

@@ -65,6 +65,10 @@
         <source>Select</source>
         <translation>Zaznacz</translation>
     </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FileProperties</name>
@@ -388,6 +392,13 @@
     <message>
         <source>New name</source>
         <translation>Nowa nazwa</translation>
+    </message>
+</context>
+<context>
+    <name>SharePage</name>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

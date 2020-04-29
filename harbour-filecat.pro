@@ -23,6 +23,7 @@ DISTFILES += qml/harbour-filecat.qml \
     qml/pages/OpenDialog.qml \
     qml/pages/fmComponents/FileItemDelegate.qml \
     qml/pages/fmComponents/MultiSelectBar.qml \
+    qml/pages/fmComponents/SharePage.qml \
     qml/pages/fmComponents/TextEditor.qml \
     qml/pages/fmComponents/imageViewerComponents/ImageControls.qml \
     qml/pages/fmComponents/mimetypeIcons.js \
