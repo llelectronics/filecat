@@ -332,15 +332,11 @@
     </message>
     <message>
         <source>Android Storage</source>
-        <translation>Memoria Android<</translation>
+        <translation>Memoria Android</translation>
     </message>
     <message>
         <source>Places</source>
         <translation>Posizioni</translation>
-    </message>
-    <message>
-        <source>Search</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Data</source>
@@ -365,6 +361,18 @@
     <message>
         <source>Rename</source>
         <translation>Rinomina</translation>
+    </message>
+    <message>
+        <source>Network Drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Apertura...</translation>
+    </message>
+    <message>
+        <source>Storage Information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
