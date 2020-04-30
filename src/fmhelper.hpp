@@ -31,6 +31,7 @@ class FM : public QObject
         void cpResultChanged();
         void rmResultChanged();
         void dirSizeChanged(quint64 dirSize);
+        void addUsbDeviceChanged(QString usbName, QString usbPath);
     private:
         QString m_sourceUrl;
         bool m_moveMode;
@@ -41,6 +42,7 @@ class FM : public QObject
         bool m_cpResult;
         bool m_rmResult;
         quint64 m_dirSize;
+        QString fatherNode;
     private slots:
         void setSourceUrl(const QString &url) { m_sourceUrl = url; emit sourceUrlChanged();}
         void setMoveMode(bool &mode) { m_moveMode = mode;}
@@ -56,6 +58,22 @@ class FM : public QObject
         bool removeDir(const QString &url)
         {
             return QDir(url).removeRecursively();
+        }
+        QJsonObject findValueFromJsonArray(QJsonArray arr, QString key, QString val) {
+            for (const auto obj : arr) {
+                //qWarning() << obj;
+                if (obj.isArray()) return findValueFromJsonArray(obj.toArray(),key,val);
+                else if (obj.toObject().value("children").isArray()) {
+                    fatherNode = obj.toObject().value("name").toString();
+                    return findValueFromJsonArray(obj.toObject().value("children").toArray(),key,val);
+                }
+                else if (obj.toObject().value(key).toString().contains(val, Qt::CaseSensitivity::CaseInsensitive)) {
+                    qWarning() << "Found objekt that contains" << val << obj.toObject();
+                    return obj.toObject();
+                }
+            }
+            qWarning() << "Nothing found returning empty";
+            return QJsonObject();
         }
     public:
         QString sourceUrl() {return m_sourceUrl;}
@@ -111,6 +129,28 @@ class FM : public QObject
             }
             return "";
         }
+        void getUSBSticks()
+        {
+            QProcess lsblkProc;
+            QList<QString> list = {"-J"};
+            lsblkProc.start(QString("/bin/lsblk"), list);
+            if (lsblkProc.waitForFinished()) {
+                QByteArray lsblkOut = lsblkProc.readAll();
+                QJsonDocument d = QJsonDocument::fromJson(lsblkOut);
+                QJsonObject devObj = d.object();
+                QJsonArray blockDevArray = devObj.value(QString("blockdevices")).toArray();
+                //QJsonObject findValueFromJsonArray(QJsonArray arr, QString key, QString val) {
+                QJsonObject usbFindObj = findValueFromJsonArray(blockDevArray,"mountpoint", "/run/media/nemo");
+                if (!usbFindObj.isEmpty()) qWarning() << "Array not empty";
+                if (!usbFindObj.value("name").toString().contains("mmcblk1", Qt::CaseSensitivity::CaseInsensitive)) {
+                    if (!fatherNode.contains("mmcblk1")) {
+                        // Call signal to add usb stick to menu
+                        qWarning() << usbFindObj.value("mountpoint").toString();
+                        emit addUsbDeviceChanged(usbFindObj.value("name").toString(),usbFindObj.value("mountpoint").toString());
+                    }
+                }
+            }
+        } // getUSBSticks
         QString data_dir()
         {
             return m_dataDir;

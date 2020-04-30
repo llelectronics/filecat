@@ -18,6 +18,15 @@ Page {
     property string picDir: _fm.getHome() + "/Pictures"
     property string vidDir: _fm.getHome() + "/Videos"
 
+    property bool updateDevices: false
+
+    onUpdateDevicesChanged: {
+        if (updateDevices) {
+            devicesList.model = "";
+            devicesList.model = devicesModel;
+        }
+    }
+
     property var customPlaces: father.customPlaces
     //        [
     //        {
@@ -113,6 +122,17 @@ Page {
         path: "/apps/harbour-llsfileman" // DO NOT CHANGE to share custom places between apps
     }
 
+    function addUSBDevice(name,path) {
+        devicesModel.push(
+                    {
+                        name: name,
+                        path: path,
+                        icon: "image://theme/icon-m-usb"
+                    }
+                    )
+        updateDevices = true;
+    }
+
     Component.onCompleted: {
         var customPlacesJSON = customPlacesSettings.value("places","")
         var customPlacesObj = JSON.parse(customPlacesJSON)
@@ -129,6 +149,7 @@ Page {
                         )
         }
         customPlacesChanged()
+        _fm.getUSBSticks()
     }
 
     SilicaFlickable {
@@ -410,6 +431,14 @@ Page {
 
         }
         // End Section Custom Places
+
+        Connections {
+            target: _fm
+            onAddUsbDeviceChanged : {
+                console.log("Add usb device " + usbName + " with path: " + usbPath)
+                root.addUSBDevice(usbName,usbPath);
+            }
+        }
 
     }
 }
