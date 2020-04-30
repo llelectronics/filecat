@@ -13,21 +13,21 @@ BackgroundItem {
     function remove() {
         var removal = removalComponent.createObject(bgdelegate)
         var toDelPath = filePath
-        if (fileIsDir)
-            removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.removeDir(toDelPath); })
-        else
-            removal.execute(delegate,qsTr("Deleting ") + fileName, function() { _fm.remove(toDelPath); })
+        removal.execute(delegate,qsTr("Deleting ") + fileName, function() {_fm.resetWatcher(); _fm.remove(toDelPath); busyInd.running = true; })
     }
 
     function copy() {
+        clipboard.clear();
         _fm.moveMode = false;
-        _fm.sourceUrl = filePath;
-        //console.debug(_fm.sourceUrl)
+        clipboard.add(filePath, fileName);
+        console.debug("Copying " + filePath)
     }
 
     function move() {
+        clipboard.clear();
         _fm.moveMode = true;
-        _fm.sourceUrl = filePath;
+        clipboard.add(filePath, fileName);
+        console.debug("Moving " + filePath)
     }
 
     ListItem {
@@ -78,19 +78,29 @@ BackgroundItem {
             anchors.top: fileLabel.bottom
             text: fileIsDir ? fileModified.toLocaleString() : humanSize(fileSize) + ", " + fileModified.toLocaleString()
             color: Theme.secondaryColor
-            width: parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
+            width:  {
+                if (mSelect.visible)
+                    parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge + mSelect.width)
+                else
+                    parent.width - fileIcon.width - (Theme.paddingLarge + Theme.paddingSmall + Theme.paddingLarge)
+            }
             truncationMode: TruncationMode.Fade
             font.pixelSize: Theme.fontSizeTiny
         }
         Switch {
             id: mSelect
-            visible: fileIsDir && multiSelect && onlyFolders
+            visible: multiSelect
+            enabled: visible
             anchors.right: parent.right
-            checked: false
-            onClicked: {
-                checked = !checked
-                fileOpen(filePath);
-                pageStack.pop();
+            anchors.verticalCenter: parent.verticalCenter
+            checked: clipboard.contains(filePath) ? true : false
+            onCheckedChanged: {
+                if (checked) {
+                    clipboard.add(filePath,fileName)
+                }
+                else {
+                    clipboard.rm(filePath)
+                }
             }
         }
 
@@ -127,6 +137,13 @@ BackgroundItem {
         id: myMenu
         ContextMenu {
             MenuItem {
+                text: qsTr("Select")
+                onClicked: {
+                    multiSelect = !multiSelect
+                    mSelect.checked = !mSelect.checked
+                }
+            }
+            MenuItem {
                 text: qsTr("Cut")
                 onClicked: {
                     bgdelegate.move();
@@ -142,6 +159,13 @@ BackgroundItem {
                 text: qsTr("Delete")
                 onClicked: {
                     bgdelegate.remove();
+                }
+            }
+            MenuItem {
+                text: qsTr("Share")
+                visible: false //!fileIsDir
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("SharePage.qml"), {"filePath": filePath})
                 }
             }
             MenuItem {

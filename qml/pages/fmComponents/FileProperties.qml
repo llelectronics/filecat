@@ -120,7 +120,7 @@ Page {
                     height: openArea.height
                     onClicked: {
                         if (!fileIsDir) {
-                            father.openFile(path)
+                            Qt.openUrlExternally(path)
                         }
                     }
 

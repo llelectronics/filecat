@@ -22,7 +22,10 @@ DISTFILES += qml/harbour-filecat.qml \
     qml/cover/CoverPage.qml \
     qml/pages/OpenDialog.qml \
     qml/pages/fmComponents/FileItemDelegate.qml \
+    qml/pages/fmComponents/MultiSelectBar.qml \
+    qml/pages/fmComponents/SharePage.qml \
     qml/pages/fmComponents/TextEditor.qml \
+    qml/pages/fmComponents/imageViewerComponents/ImageControls.qml \
     qml/pages/fmComponents/mimetypeIcons.js \
     rpm/harbour-filecat.changes.in \
     rpm/harbour-filecat.changes.run.in \
@@ -49,6 +52,7 @@ translations/harbour-filecat-it.ts \
 translations/harbour-filecat-nl_BE.ts \
 translations/harbour-filecat-nl_NL.ts \
 translations/harbour-filecat-pl.ts \
+translations/harbour-filecat-ru.ts \
 translations/harbour-filecat-sv.ts \
 translations/harbour-filecat-zh_CN.ts
 
@@ -60,4 +64,7 @@ HEADERS += \
     src/folderlistmodel/fileinfothread_p.h \
     src/folderlistmodel/fileproperty_p.h \
     src/folderlistmodel/qquickfolderlistmodel.h \
+    src/process.hpp \
     src/videohelper.hpp
+
+CONFIG += c++11

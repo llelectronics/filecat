@@ -2,13 +2,15 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.filecat.FolderListModel 1.0
 import Nemo.Configuration 1.0
+import Sailfish.Pickers 1.0
 import "fmComponents"
+import "fmComponents/imageViewerComponents"
 
 Page {
     id: page
     allowedOrientations: Orientation.All
 
-    property bool multiSelect: onlyFolders ? true : false
+    property bool multiSelect: selectMode ? true : false
     property bool selectMode: false
     property bool onlyFolders: false
     property bool hiddenShow: false
@@ -27,6 +29,8 @@ Page {
     property QtObject dataContainer
     property QtObject imgView
 
+    property alias contentPickerPage: contentPickerPage
+
     signal fileOpen(string path);
 
    property var customPlaces: [
@@ -37,6 +41,17 @@ Page {
 //       }
    ]
 
+    function openSearch() {
+        pageStack.push(contentPickerPage)
+    }
+
+    function openPicker(picker) {
+       if (picker === "docDir") pageStack.push(documentPickerPage)
+       else if (picker === "dowDir") pageStack.push(downloadPickerPage)
+       else if (picker === "picDir") pageStack.push(imagePickerPage)
+       else if (picker === "musDir") pageStack.push(musicPickerPage)
+       else if (picker === "vidDir") pageStack.push(videoPickerPage)
+    }
 
     ConfigurationGroup {
         id: customPlacesSettings
@@ -58,6 +73,12 @@ Page {
                                    { "father": page })
             _loaded = true
         }
+    }
+
+    function refresh() {
+        var oPath = path
+        path = ""
+        path = oPath
     }
 
     function openFile(path) {
@@ -168,7 +189,8 @@ Page {
     SilicaListView {
         id: view
         model: fileModel
-        anchors.fill: parent
+        width: parent.width
+        height: multiSelectBar.open ? parent.height - multiSelectBar.height : parent.height
 
         header: PageHeader {
             title: findBaseName((path).toString())
@@ -265,13 +287,25 @@ Page {
 
             MenuItem {
                 id: pasteMenuEntry
-                visible: { if (_fm.sourceUrl != "" && _fm.sourceUrl != undefined) return true;
-                    else return false
+                visible: clipboard.count > 0
+                text: {
+                    var pasteTxt = qsTr("Paste") + " ("
+                    if (clipboard.count > 1)
+                        pasteTxt += clipboard.count + qsTr(" Files")
+                    else if (clipboard.count === 1)
+                        pasteTxt += clipboard.get(0).name
+                    pasteTxt += ")"
+                    return pasteTxt
                 }
-                text: qsTr("Paste") + "(" + findBaseName(_fm.sourceUrl) + ")"
                 onClicked: {
                     busyInd.running = true
-                    _fm.copyFile(_fm.sourceUrl,findFullPath(fileModel.folder) + "/" + findBaseName(_fm.sourceUrl))
+                    _fm.resetWatcher();
+                    for (var i=0; i<clipboard.count; i++) {
+                        console.log("Copying " + clipboard.get(i).source + " to " + findFullPath(fileModel.folder) + "/" + clipboard.get(i).name);
+                        _fm.copyFile(clipboard.get(i).source,findFullPath(fileModel.folder) + "/" + clipboard.get(i).name)
+                    }
+                    clipboard.clear();
+                    refresh();
                 }
             }
             MenuItem {
@@ -310,6 +344,24 @@ Page {
             else {
                 _fm.sourceUrl = "";
                 var message = qsTr("File operation succeeded")
+                console.debug(message);
+                mainWindow.infoBanner.parent = page
+                mainWindow.infoBanner.anchors.top = page.top
+                infoBanner.showText(message)
+            }
+            busyInd.running = false;
+        }
+        onRmResultChanged: {
+            console.log("rmResult: " + _fm.rmResult);
+            if (!_fm.rmResult) {
+                var message = qsTr("Error deleting file(s)")
+                console.debug(message);
+                mainWindow.infoBanner.parent = page
+                mainWindow.infoBanner.anchors.top = page.top
+                infoBanner.showText(message)
+            }
+            else {
+                var message = qsTr("File deletion succeeded")
                 console.debug(message);
                 mainWindow.infoBanner.parent = page
                 mainWindow.infoBanner.anchors.top = page.top
@@ -384,9 +436,28 @@ Page {
 
             TouchBlocker {
                 id: blocker;
+                parent: pageStack.currentPage
                 anchors.fill: parent;
 
-                property alias source : imgViewer.source;
+                property alias source : imgViewer.source
+
+                function getCurIdx() {
+                    for (var i=0; i<fileModel.count; i++) {
+                        if (imgViewer.source === fileModel.get(i,"fileURL")) {
+                            return i;
+                        }
+                    }
+                }
+                Component.onCompleted: {
+                    page.showNavigationIndicator = false
+                    page.backNavigation = false
+                    page.forwardNavigation = false
+                }
+                Component.onDestruction: {
+                    page.showNavigationIndicator = true
+                    page.backNavigation = true
+                    page.forwardNavigation = true
+                }
 
                 Rectangle {
                     color: Qt.rgba (1.0 - Theme.primaryColor.r, 1.0 - Theme.primaryColor.g, 1.0 - Theme.primaryColor.b, 0.85);
@@ -398,17 +469,114 @@ Page {
                     active: true;
                     anchors.fill: parent;
                     onClicked: {
-                        blocker.destroy ();
+                        imageControls.open = !imageControls.open
                     }
+                    onPressAndHold: blocker.destroy ();
 
                     property var root : mainWindow; // NOTE : to avoid QML warnings because it' baldy coded...
+                }
+                IconButton {
+                    id: closeImg
+                    icon.source: "image://theme/icon-m-cancel"
+                    anchors.top: imgViewer.top
+                    anchors.right: imgViewer.right
+                    visible: imageControls.open
+                    onClicked: {
+                        blocker.destroy();
+                    }
+                }
+                BusyIndicator {
+                    running: imgViewer.photo.status === Image.Loading && !delayBusyIndicator.running
+                    size: BusyIndicatorSize.Large
+                    anchors.centerIn: parent
+                    Timer {
+                        id: delayBusyIndicator
+                        running: imgViewer.photo.status === Image.Loading
+                        interval: 1000
+                    }
+                }
+                ImageControls {
+                    id: imageControls
+                    viewer: imgViewer
+                    open: true
                 }
             }
         }
 
+    Component {
+        id: contentPickerPage
+        ContentPickerPage {
+            title: qsTr("Search file")
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: documentPickerPage
+        DocumentPickerPage {
+            title: qsTr("Documents")
+            allowedOrientations: Orientation.All
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: downloadPickerPage
+        DownloadPickerPage {
+            title: qsTr("Downloads")
+            allowedOrientations: Orientation.All
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: musicPickerPage
+        MusicPickerPage {
+            title: qsTr("Music")
+            allowedOrientations: Orientation.All
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: imagePickerPage
+        ImagePickerPage {
+            title: qsTr("Pictures")
+            allowedOrientations: Orientation.All
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+    Component {
+        id: videoPickerPage
+        VideoPickerPage {
+            title: qsTr("Videos")
+            allowedOrientations: Orientation.All
+            onSelectedContentPropertiesChanged: {
+                openFile(selectedContentProperties.filePath)
+            }
+        }
+    }
+
+
+
     Item {
         id: overlay;
         anchors.fill: page;
+    }
+
+    MultiSelectBar {
+        id: multiSelectBar
+        open: multiSelect
+    }
+
+    RemorsePopup {
+        id: remorseRemove
     }
 
 }

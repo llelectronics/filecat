@@ -18,6 +18,15 @@ Page {
     property string picDir: _fm.getHome() + "/Pictures"
     property string vidDir: _fm.getHome() + "/Videos"
 
+    property bool updateDevices: false
+
+    onUpdateDevicesChanged: {
+        if (updateDevices) {
+            devicesList.model = "";
+            devicesList.model = devicesModel;
+        }
+    }
+
     property var customPlaces: father.customPlaces
     //        [
     //        {
@@ -26,6 +35,36 @@ Page {
     //        icon: "image://theme/icon-m-phone"
     //        }
     //        ]
+    
+    ListModel {
+        id: pickerModel
+
+        ListElement {
+            name: qsTr("Documents")
+            uid: "docDir"
+            ico: "image://theme/icon-m-file-document"
+        }
+        ListElement {
+            name: qsTr("Downloads")
+            uid: "dowDir"
+            ico: "image://theme/icon-m-cloud-download"
+        }
+        ListElement {
+            name: qsTr("Music")
+            uid: "musDir"
+            ico: "image://theme/icon-m-sounds"
+        }
+        ListElement {
+            name: qsTr("Pictures")
+            uid: "picDir"
+            ico: "image://theme/icon-m-file-image"
+        }
+        ListElement {
+            name: qsTr("Videos")
+            uid: "vidDir"
+            ico: "image://theme/icon-m-media"
+        }
+    }
 
     property var devicesModel: [
          {
@@ -49,7 +88,7 @@ Page {
         {
             name: qsTr("Documents"),
             path: docDir,
-            icon: "image://theme/icon-m-document"
+            icon: "image://theme/icon-m-file-document"
         },
         {
             name: qsTr("Downloads"),
@@ -64,7 +103,7 @@ Page {
         {
             name: qsTr("Pictures"),
             path: picDir,
-            icon: "image://theme/icon-m-image"
+            icon: "image://theme/icon-m-file-image"
         },
         {
             name: qsTr("Videos"),
@@ -83,6 +122,17 @@ Page {
         path: "/apps/harbour-llsfileman" // DO NOT CHANGE to share custom places between apps
     }
 
+    function addUSBDevice(name,path) {
+        devicesModel.push(
+                    {
+                        name: name,
+                        path: path,
+                        icon: "image://theme/icon-m-usb"
+                    }
+                    )
+        updateDevices = true;
+    }
+
     Component.onCompleted: {
         var customPlacesJSON = customPlacesSettings.value("places","")
         var customPlacesObj = JSON.parse(customPlacesJSON)
@@ -99,15 +149,102 @@ Page {
                         )
         }
         customPlacesChanged()
+        _fm.getUSBSticks()
     }
 
     SilicaFlickable {
         anchors.fill: parent
-        contentHeight: head.height + secDevices.height + secPlaces.height + cusPlaces.height + Theme.paddingLarge
+        contentHeight: head.height + pickerSection.height + secDevices.height + secPlaces.height + cusPlaces.height + Theme.paddingLarge
 
         PageHeader {
             id: head
             title: qsTr("Places")
+        }
+
+        PullDownMenu {
+            MenuItem {
+                text: qsTr("Network Drives")
+                visible: _fm.isFile("/usr/bin/fishnetmount-gui")
+                onClicked: {
+                    mainWindow.infoBanner.parent = root
+                    mainWindow.infoBanner.anchors.top = root.top
+                    mainWindow.infoBanner.showText(qsTr("Opening..."))
+                    process.start("/usr/bin/fishnetmount-gui", [""])
+                }
+            }
+            MenuItem {
+                text: qsTr("Storage Information")
+                onClicked: {
+                    mainWindow.infoBanner.parent = root
+                    mainWindow.infoBanner.anchors.top = root.top
+                    mainWindow.infoBanner.showText(qsTr("Opening..."))
+                    process.start("/usr/bin/dbus-send", ["--session", "--print-reply", "--dest=com.jolla.settings", "/com/jolla/settings/ui", "com.jolla.settings.ui.showPage", "string:system_settings/system/storage"])
+                }
+            }
+        }
+        
+        // Pickers
+        Item {
+            id: pickerSection
+            width: parent.width
+            height: pickersGrid.height
+            anchors.top: head.bottom
+            anchors.topMargin: Theme.paddingSmall
+            clip: true
+            
+            SectionHeader { id: dataHeader; text: qsTr("Data") }
+
+            Row {
+                id: pickersGrid
+                anchors.top: dataHeader.bottom
+                height: childrenRect.height
+                width: parent.width - Theme.paddingMedium * 2
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.leftMargin: Theme.paddingLarge
+                anchors.rightMargin: Theme.paddingLarge
+                spacing: (parent.width - 7*(Theme.iconSizeMedium+Theme.paddingMedium)) / 8
+                Repeater {
+                    model: pickerModel
+                    height: delegate.height
+                    delegate: Item {
+                        width: (Theme.itemSizeMedium > icoLbl.width) ? Theme.itemSizeMedium : icoLbl.width
+                        height: childrenRect.height + icoLbl.height + Theme.paddingLarge * 2
+                        anchors.leftMargin: Theme.paddingMedium
+                        anchors.rightMargin: Theme.paddingMedium
+
+                        IconButton {
+                            id: icoButton
+                            height: Theme.iconSizeMedium
+                            width: Theme.iconSizeMedium
+                            icon.source: ico
+                            onClicked: father.openPicker(uid)
+                            anchors.horizontalCenter: parent.horizontalCenter
+                        }
+                        Rectangle {
+                            id: icoButtonCircle
+                            width: icoButton.width + Theme.paddingMedium
+                            height: icoButton.height + Theme.paddingMedium
+                            color: "transparent"
+                            border.color: Theme.primaryColor
+                            border.width: 2
+                            radius: width / 2
+                            anchors.centerIn: icoButton
+                        }
+
+                        Label {
+                            id: icoLbl
+                            anchors.top: icoButton.bottom
+                            anchors.topMargin: Theme.paddingLarge
+                            text: name
+                            truncationMode: TruncationMode.Fade
+                            font.pixelSize: Theme.fontSizeTiny
+                            anchors.horizontalCenter: icoButton.horizontalCenter
+                        }
+                    } // Item
+                } // Repeater
+                
+            }
         }
 
         // Section Device
@@ -115,7 +252,7 @@ Page {
             id: secDevices
             width: parent.width
             height: devicesList.height + devicesHeader.height
-            anchors.top: head.bottom
+            anchors.top: pickerSection.bottom
             anchors.topMargin: Theme.paddingSmall
             clip: true
 
@@ -294,6 +431,14 @@ Page {
 
         }
         // End Section Custom Places
+
+        Connections {
+            target: _fm
+            onAddUsbDeviceChanged : {
+                console.log("Add usb device " + usbName + " with path: " + usbPath)
+                root.addUSBDevice(usbName,usbPath);
+            }
+        }
 
     }
 }

@@ -61,6 +61,14 @@
         <source>Properties</source>
         <translation>Propriétés</translation>
     </message>
+    <message>
+        <source>Select</source>
+        <translation>Sélectionner</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FileProperties</name>
@@ -115,6 +123,24 @@
     <message>
         <source>Open with Texteditor</source>
         <translation>Ouvrir avec Texteditor</translation>
+    </message>
+</context>
+<context>
+    <name>ImageControls</name>
+    <message>
+        <source>Open externally</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Ouverture...</translation>
+    </message>
+</context>
+<context>
+    <name>MultiSelectBar</name>
+    <message>
+        <source>Deleting %1 files</source>
+        <translation>Suppression de %1 fichiers</translation>
     </message>
 </context>
 <context>
@@ -179,6 +205,42 @@
         <source>Saved directory to last known</source>
         <translation>Enregistrer dans le dernier dossier connu</translation>
     </message>
+    <message>
+        <source>Error deleting file(s)</source>
+        <translation>Erreur lors de la suppression des fichiers</translation>
+    </message>
+    <message>
+        <source>File deletion succeeded</source>
+        <translation>Suppresion des fichiers corrèctement effectuée</translation>
+    </message>
+    <message>
+        <source> Files</source>
+        <translation> fichiers</translation>
+    </message>
+    <message>
+        <source>Search file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation>Documents</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation>Téléchargements</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation>Musique</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation>Vidéos</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation>Photos</translation>
+    </message>
 </context>
 <context>
     <name>OpenURLPage</name>
@@ -241,18 +303,6 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Mémoire de l&apos;appareil</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>Carte SD</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Accueil</translation>
-    </message>
-    <message>
         <source>Documents</source>
         <translation>Documents</translation>
     </message>
@@ -273,12 +323,28 @@
         <translation>Vidéos</translation>
     </message>
     <message>
+        <source>Device memory</source>
+        <translation>Mémoire de l&apos;appareil</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation>Carte SD</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Accueil</translation>
+    </message>
+    <message>
         <source>Android Storage</source>
         <translation>Stockage Android</translation>
     </message>
     <message>
         <source>Places</source>
         <translation>Lieux</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Fichiers de données</translation>
     </message>
     <message>
         <source>Devices</source>
@@ -300,6 +366,18 @@
         <source>Rename</source>
         <translation>Renommer</translation>
     </message>
+    <message>
+        <source>Network Drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Ouverture...</translation>
+    </message>
+    <message>
+        <source>Storage Information</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RenameDialog</name>
@@ -314,6 +392,13 @@
     <message>
         <source>New name</source>
         <translation>Nouveau nom</translation>
+    </message>
+</context>
+<context>
+    <name>SharePage</name>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

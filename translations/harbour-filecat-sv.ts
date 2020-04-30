@@ -13,7 +13,7 @@
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -43,7 +43,7 @@
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Tar bort </translation>
     </message>
     <message>
         <source>Cut</source>
@@ -60,6 +60,14 @@
     <message>
         <source>Properties</source>
         <translation>Egenskaper</translation>
+    </message>
+    <message>
+        <source>Select</source>
+        <translation>Välj</translation>
+    </message>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -114,7 +122,25 @@
     </message>
     <message>
         <source>Open with Texteditor</source>
-        <translation type="unfinished"></translation>
+        <translation>Öppna med textredigerare</translation>
+    </message>
+</context>
+<context>
+    <name>ImageControls</name>
+    <message>
+        <source>Open externally</source>
+        <translation>Öppna externt</translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Öppnar...</translation>
+    </message>
+</context>
+<context>
+    <name>MultiSelectBar</name>
+    <message>
+        <source>Deleting %1 files</source>
+        <translation>Tar bort %1 fil(er)</translation>
     </message>
 </context>
 <context>
@@ -141,19 +167,19 @@
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation>Kunde inte klistra in filen</translation>
+        <translation>Kunde inte klistra in filen </translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation>Filoperationen lyckades</translation>
+        <translation>Filåtgärden slutfördes</translation>
     </message>
     <message>
         <source>Hide hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Dölj dolda filer</translation>
     </message>
     <message>
         <source>Show hidden files</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa dolda filer</translation>
     </message>
     <message>
         <source>Name</source>
@@ -169,15 +195,51 @@
     </message>
     <message>
         <source>Type</source>
-        <translation>typ</translation>
+        <translation>Typ</translation>
     </message>
     <message>
         <source>Sort by: </source>
-        <translation>Sortera efter:</translation>
+        <translation>Sortera efter: </translation>
     </message>
     <message>
         <source>Saved directory to last known</source>
-        <translation type="unfinished"></translation>
+        <translation>Sparade platsen i senast kända</translation>
+    </message>
+    <message>
+        <source>Error deleting file(s)</source>
+        <translation>Kunde inte ta bort filerna</translation>
+    </message>
+    <message>
+        <source>File deletion succeeded</source>
+        <translation>Filborttagning slutförd</translation>
+    </message>
+    <message>
+        <source> Files</source>
+        <translation> filer</translation>
+    </message>
+    <message>
+        <source>Search file</source>
+        <translation>Sök fil</translation>
+    </message>
+    <message>
+        <source>Documents</source>
+        <translation>Dokument</translation>
+    </message>
+    <message>
+        <source>Downloads</source>
+        <translation>Nedladdningar</translation>
+    </message>
+    <message>
+        <source>Music</source>
+        <translation>Musik</translation>
+    </message>
+    <message>
+        <source>Videos</source>
+        <translation>Videor</translation>
+    </message>
+    <message>
+        <source>Pictures</source>
+        <translation>Bilder</translation>
     </message>
 </context>
 <context>
@@ -241,24 +303,12 @@
 <context>
     <name>PlacesPage</name>
     <message>
-        <source>Device memory</source>
-        <translation>Enhetens minne</translation>
-    </message>
-    <message>
-        <source>SD Card</source>
-        <translation>SD-kort</translation>
-    </message>
-    <message>
-        <source>Home</source>
-        <translation>Hem</translation>
-    </message>
-    <message>
         <source>Documents</source>
         <translation>Dokument</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Nerladdningar</translation>
+        <translation>Nedladdningar</translation>
     </message>
     <message>
         <source>Music</source>
@@ -273,12 +323,28 @@
         <translation>Videor</translation>
     </message>
     <message>
+        <source>Device memory</source>
+        <translation>Enhetens minne</translation>
+    </message>
+    <message>
+        <source>SD Card</source>
+        <translation>SD-kort</translation>
+    </message>
+    <message>
+        <source>Home</source>
+        <translation>Hem</translation>
+    </message>
+    <message>
         <source>Android Storage</source>
         <translation>Android-lagring</translation>
     </message>
     <message>
         <source>Places</source>
         <translation>Platser</translation>
+    </message>
+    <message>
+        <source>Data</source>
+        <translation>Data</translation>
     </message>
     <message>
         <source>Devices</source>
@@ -294,11 +360,23 @@
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Tar bort</translation>
+        <translation>Tar bort </translation>
     </message>
     <message>
         <source>Rename</source>
         <translation>Byt namn</translation>
+    </message>
+    <message>
+        <source>Network Drives</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Opening...</source>
+        <translation>Öppnar...</translation>
+    </message>
+    <message>
+        <source>Storage Information</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -317,10 +395,17 @@
     </message>
 </context>
 <context>
+    <name>SharePage</name>
+    <message>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>TextEditor</name>
     <message>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara</translation>
     </message>
 </context>
 <context>
@@ -350,7 +435,7 @@ The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
         <translation>
 Filmen kan inte spelas upp på grund av problem att komma åt resurser.
-Se till att logga in på Youtube. Några filmer kan vara geografiskt blockerade eller kräver att du skall vara inloggad på Youtube.</translation>
+Se till att logga in om det är Youtube-filmer. Några filmer kan vara geografiskt blockerade eller kräver att du skall vara inloggad på Youtube.</translation>
     </message>
     <message>
         <source>

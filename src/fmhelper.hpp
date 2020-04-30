@@ -15,6 +15,8 @@
 #include <QtConcurrent/QtConcurrent>
 #include <QFutureWatcher>
 #include <QStorageInfo>
+#include <QJsonDocument>
+#include "QProcess"
 
 class FM : public QObject
 {   Q_OBJECT
@@ -22,11 +24,14 @@ class FM : public QObject
     Q_PROPERTY (QString sourceUrl READ sourceUrl WRITE setSourceUrl NOTIFY sourceUrlChanged)
     Q_PROPERTY (bool moveMode READ isMoveMode WRITE setMoveMode)
     Q_PROPERTY (bool cpResult READ cpResult NOTIFY cpResultChanged)
+    Q_PROPERTY (bool rmResult READ rmResult NOTIFY rmResultChanged)
 
     signals:
         void sourceUrlChanged();
         void cpResultChanged();
+        void rmResultChanged();
         void dirSizeChanged(quint64 dirSize);
+        void addUsbDeviceChanged(QString usbName, QString usbPath);
     private:
         QString m_sourceUrl;
         bool m_moveMode;
@@ -35,23 +40,58 @@ class FM : public QObject
         QFutureWatcher<bool> watcher;
         QFutureWatcher<quint64> dirWatcher;
         bool m_cpResult;
+        bool m_rmResult;
         quint64 m_dirSize;
+        QString fatherNode;
     private slots:
         void setSourceUrl(const QString &url) { m_sourceUrl = url; emit sourceUrlChanged();}
         void setMoveMode(bool &mode) { m_moveMode = mode;}
+        bool removeFile(const QString &url)
+        {    //qDebug() << "Called the C++ slot and request removal of:" << url;
+            return QFile(url).remove();
+        }
+        bool rm(const QString &url)
+        {    //qDebug() << "Called the C++ slot and request removal of:" << url;
+            if (this->isFile(url)) return this->removeFile(url);
+            else return removeDir(url);
+        }
+        bool removeDir(const QString &url)
+        {
+            return QDir(url).removeRecursively();
+        }
+        QJsonObject findValueFromJsonArray(QJsonArray arr, QString key, QString val) {
+            for (const auto obj : arr) {
+                //qWarning() << obj;
+                if (obj.isArray()) return findValueFromJsonArray(obj.toArray(),key,val);
+                else if (obj.toObject().value("children").isArray()) {
+                    fatherNode = obj.toObject().value("name").toString();
+                    return findValueFromJsonArray(obj.toObject().value("children").toArray(),key,val);
+                }
+                else if (obj.toObject().value(key).toString().contains(val, Qt::CaseSensitivity::CaseInsensitive)) {
+                    qWarning() << "Found objekt that contains" << val << obj.toObject();
+                    return obj.toObject();
+                }
+            }
+            qWarning() << "Nothing found returning empty";
+            return QJsonObject();
+        }
     public:
         QString sourceUrl() {return m_sourceUrl;}
         bool isMoveMode() {return m_moveMode;}
         bool cpResult() {return m_cpResult;}
+        bool rmResult() {return m_rmResult;}
         //quint64 dirSize() { return m_dirSize; }
     public slots:
         void remove(const QString &url)
-        {    //qDebug() << "Called the C++ slot and request removal of:" << url;
-             QFile(url).remove();
-        }
-        void removeDir(const QString &url)
         {
-            QDir(url).removeRecursively();
+            connect(&watcher, &QFutureWatcher<void>::finished, [this]() {
+                this->rmFinished();
+            });
+            QFuture<bool> future = QtConcurrent::run(this, &FM::rm, url);
+            watcher.setFuture(future);
+        }
+        void resetWatcher() {
+            watcher.disconnect();
         }
         QString getHome()
         {    //qDebug() << "Called the C++ slot and request removal of:" << url;
@@ -63,15 +103,55 @@ class FM : public QObject
         }
         QString getSDCard()
         {
-            foreach (const QStorageInfo &storage, QStorageInfo::mountedVolumes()) {
-                    if (storage.isValid() && storage.isReady() && storage.device().indexOf("mmcblk1p1") != -1) {
-//                        qDebug() << "DEBUG STORAGE rootPath: " + storage.rootPath();
-//                        qDebug() << "DEBUG STORAGE device: " + storage.device();
-                        return storage.rootPath();
+            QProcess lsblkProc;
+            QList<QString> list = {"-J", "/dev/mmcblk1"};
+            lsblkProc.start(QString("/bin/lsblk"), list);
+            if (lsblkProc.waitForFinished()) {
+                QByteArray lsblkOut = lsblkProc.readAll();
+                //qWarning() << lsblkOut;
+                QJsonDocument d = QJsonDocument::fromJson(lsblkOut);
+                QJsonObject devObj = d.object();
+                QJsonArray blockDevArray = devObj.value(QString("blockdevices")).toArray();
+                QJsonObject blockArrayObject = blockDevArray.first().toObject();
+                QJsonArray blockPartArray = blockArrayObject.value(QString("children")).toArray();
+                QJsonObject blockPartObject = blockPartArray.first().toObject();
+                if (!QJsonValue(blockPartObject.value("mountpoint")).isNull()) {
+                    return blockPartObject.value("mountpoint").toString();
+                }
+                else if (QJsonValue(blockPartObject.value("children")).isArray()) {
+                    // Try to go through children
+                    QJsonArray blockPartChildrenArray =blockPartObject.value(QString("children")).toArray();
+                    QJsonObject blockPartChildrenObject = blockPartChildrenArray.first().toObject();
+                    if (!QJsonValue(blockPartChildrenObject.value("mountpoint")).isNull()) {
+                        return blockPartChildrenObject.value("mountpoint").toString();
                     }
+                }
             }
             return "";
         }
+        void getUSBSticks()
+        {
+            QProcess lsblkProc;
+            QList<QString> list = {"-J"};
+            lsblkProc.start(QString("/bin/lsblk"), list);
+            if (lsblkProc.waitForFinished()) {
+                QByteArray lsblkOut = lsblkProc.readAll();
+                QJsonDocument d = QJsonDocument::fromJson(lsblkOut);
+                QJsonObject devObj = d.object();
+                QJsonArray blockDevArray = devObj.value(QString("blockdevices")).toArray();
+                //QJsonObject findValueFromJsonArray(QJsonArray arr, QString key, QString val) {
+                QJsonObject usbFindObj = findValueFromJsonArray(blockDevArray,"mountpoint", "/run/media/nemo");
+                if (!usbFindObj.isEmpty()) {
+                    if (!usbFindObj.value("name").toString().contains("mmcblk1", Qt::CaseSensitivity::CaseInsensitive)) {
+                        if (!fatherNode.contains("mmcblk1")) {
+                            // Call signal to add usb stick to menu
+                            qWarning() << usbFindObj.value("mountpoint").toString();
+                            emit addUsbDeviceChanged(usbFindObj.value("name").toString(),usbFindObj.value("mountpoint").toString());
+                        }
+                    }
+                }
+            }
+        } // getUSBSticks
         QString data_dir()
         {
             return m_dataDir;
@@ -115,7 +195,9 @@ class FM : public QObject
             return true;
         }
         bool copyFile(const QString &source, const QString &target) {
-            connect(&watcher, SIGNAL(finished()), this, SLOT(cpFinished()));
+            connect(&watcher, &QFutureWatcher<void>::finished, [this,source]() {
+                this->cpFinished(source);
+            });
             QFuture<bool> future = QtConcurrent::run(this, &FM::cpFile, source, target);
             watcher.setFuture(future);
             return true;
@@ -226,7 +308,7 @@ class FM : public QObject
             QUrl path(url);
             QMimeType mime;
 
-            QRegExp regex(QRegExp("[_\\d\\w\\-\\. ]+\\.[_\\d\\w\\-\\. ]+"));
+            QRegExp regex(QRegExp("^(.*[\\\/])?(.*?)(\.[^.]*?|)$"));
             QString filename = url.split('/').last();
             int idx = filename.indexOf(regex);
             if(filename.isEmpty() || (idx == -1))
@@ -235,16 +317,16 @@ class FM : public QObject
                 mime = db.mimeTypeForFile(filename.mid(idx, regex.matchedLength()));
             return mime.name();
         }
-        void cpFinished()
+        void cpFinished(const QString &source)
         {
            m_cpResult = watcher.future().result();
            qDebug() << "m_cpResult = " << m_cpResult;
            // Check for target copied successfully
            if (m_cpResult && m_moveMode) {
-               qDebug() << "m_sourceUrl: " + m_sourceUrl;
-               QFileInfo srcFileInfo(m_sourceUrl);
-               if (srcFileInfo.isDir()) { removeDir(m_sourceUrl); }
-               else remove(m_sourceUrl);
+               qDebug() << "m_sourceUrl: " + source;
+               QFileInfo srcFileInfo(source);
+               if (srcFileInfo.isDir()) { removeDir(source); }
+               else removeFile(source);
            }
            emit cpResultChanged();
         }
@@ -253,6 +335,12 @@ class FM : public QObject
            m_dirSize = dirWatcher.future().result();
            //qDebug() << "m_dirSize = " << m_dirSize;
            emit dirSizeChanged(m_dirSize);
+        }
+        void rmFinished()
+        {
+           m_rmResult = watcher.future().result();
+           qDebug() << "m_rmResult = " << m_rmResult;
+           emit rmResultChanged();
         }
 };
 

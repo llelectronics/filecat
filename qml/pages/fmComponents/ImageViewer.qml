@@ -59,6 +59,7 @@ import Sailfish.Silica 1.0
             property bool transpose: (orientation % 180) != 0
 
             signal clicked
+            signal pressAndHold
 
             // Override SilicaFlickable's pressDelay because otherwise it will
             // block touch events going to PinchArea in certain cases.
@@ -262,6 +263,7 @@ import Sailfish.Silica 1.0
                         }
                     }
                     onClicked: flickable.clicked()
+                    onPressAndHold: flickable.pressAndHold()
                     onDoubleClicked: {
                         if (_scale !== _fittedScale) {
                             zoomOutAnimation.start()

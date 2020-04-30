@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl">
+<TS version="2.1">
 <context>
     <name></name>
     <message id="components_gallery-la-image-loading-failed">
         <source>Oops, can&apos;t display the image</source>
         <extracomment>Image loading failed</extracomment>
-        <translation>Nieudane ładowanie obrazka</translation>
+        <translation>Невозможно показать изображение</translation>
     </message>
 </context>
 <context>
     <name>CoverPage</name>
     <message>
         <source>My Cover</source>
-        <translation>Moja okładka</translation>
+        <translation>Менеджер файлов</translation>
     </message>
 </context>
 <context>
     <name>CreateDirDialog</name>
     <message>
         <source>Error creating new directory</source>
-        <translation>Błąd podczas tworzenia nowego katalogu</translation>
+        <translation>Ошибка при создании каталога</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation>Utwórz Katalog</translation>
+        <translation>Новая папка</translation>
     </message>
     <message>
         <source>Create</source>
-        <translation>Utwórz</translation>
+        <translation>Создать</translation>
     </message>
     <message>
         <source>Create a new folder under</source>
-        <translation>Utwórz nowy katalog pod</translation>
+        <translation>Создать папку в</translation>
     </message>
     <message>
         <source>Folder name</source>
-        <translation>Nazwa katalogu</translation>
+        <translation>Имя папки</translation>
     </message>
 </context>
 <context>
     <name>FileItemDelegate</name>
     <message>
         <source>Deleting </source>
-        <translation>Usuwanie</translation>
+        <translation>Удаление</translation>
     </message>
     <message>
         <source>Cut</source>
-        <translation>Wytnij</translation>
+        <translation>Вырезать</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopiuj</translation>
+        <translation>Копировать</translation>
     </message>
     <message>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Свойства</translation>
     </message>
     <message>
         <source>Select</source>
-        <translation>Zaznacz</translation>
+        <translation>Выделить</translation>
     </message>
     <message>
         <source>Share</source>
@@ -74,297 +74,297 @@
     <name>FileProperties</name>
     <message>
         <source>Change Permissions</source>
-        <translation>Zmień uprawnienia</translation>
+        <translation>Изменить права</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Zmień nazwę</translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Error renaming</source>
-        <translation>Błąd zmiany nazwy</translation>
+        <translation>Ошибка при переименовании</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Свойства</translation>
     </message>
     <message>
         <source>Location</source>
-        <translation>Lokalizacja</translation>
+        <translation>Местоположение</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <source>Link to %1</source>
-        <translation>Link do %1</translation>
+        <translation>Ссылка на %1</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Rozmiar</translation>
+        <translation>Размер</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation>Uprawnienia</translation>
+        <translation>Права доступа</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation>Właściciel</translation>
+        <translation>Владелец</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Grupa</translation>
+        <translation>Группа</translation>
     </message>
     <message>
         <source>Last modified</source>
-        <translation>Ostatnio zmodyfikowany</translation>
+        <translation>Изменено</translation>
     </message>
     <message>
         <source>Open with Texteditor</source>
-        <translation>Otwórrz w Textedytorze</translation>
+        <translation>Открыть редактором текстов</translation>
     </message>
 </context>
 <context>
     <name>ImageControls</name>
     <message>
         <source>Open externally</source>
-        <translation>Otwórz w zewnętrznej aplikacji</translation>
+        <translation>Открыть во внешней программе</translation>
     </message>
     <message>
         <source>Opening...</source>
-        <translation>Otwieranie...</translation>
+        <translation>Открытие...</translation>
     </message>
 </context>
 <context>
     <name>MultiSelectBar</name>
     <message>
         <source>Deleting %1 files</source>
-        <translation>Usuwanie %1 plików</translation>
+        <translation>Удаление %1 файлов</translation>
     </message>
 </context>
 <context>
     <name>OpenDialog</name>
     <message>
         <source>Opening...</source>
-        <translation>Otwieranie...</translation>
+        <translation>Открытие...</translation>
     </message>
     <message>
         <source>Create Folder</source>
-        <translation>Utwórz Katalog</translation>
+        <translation>Создать папку</translation>
     </message>
     <message>
         <source>Add to places</source>
-        <translation>Dodaj miejsca</translation>
+        <translation>Добавить в закладки</translation>
     </message>
     <message>
         <source>Paste</source>
-        <translation>Wklej</translation>
+        <translation>Вставить</translation>
     </message>
     <message>
         <source>Properties</source>
-        <translation>Właściwości</translation>
+        <translation>Свойства</translation>
     </message>
     <message>
         <source>Error pasting file </source>
-        <translation>Błąd wklejania pliku</translation>
+        <translation>Ошибка при вставке файла</translation>
     </message>
     <message>
         <source>File operation succeeded</source>
-        <translation>Operacja na pliku zakończona sukcesem</translation>
+        <translation>Файловая операция завершена</translation>
     </message>
     <message>
         <source>Hide hidden files</source>
-        <translation>Ukryj ukryte pliki</translation>
+        <translation>Прятать скрытые файлы</translation>
     </message>
     <message>
         <source>Show hidden files</source>
-        <translation>Pokaż ukryte pliki</translation>
+        <translation>Показывать скрытые файлы</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Nazwa</translation>
+        <translation>имени</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Czas</translation>
+        <translation>времени</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation>Rozmiar</translation>
+        <translation>размеру</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>Typ</translation>
+        <translation>типу</translation>
     </message>
     <message>
         <source>Sort by: </source>
-        <translation>Sortuj po: </translation>
+        <translation>Сортировать по: </translation>
     </message>
     <message>
         <source>Saved directory to last known</source>
-        <translation>Zapisany katalog do ostatniej znanej</translation>
+        <translation>Каталог сохранен в журнал</translation>
     </message>
     <message>
         <source>Error deleting file(s)</source>
-        <translation>Błąd usuwania pliku/plików</translation>
+        <translation>Ошибка при удалении файла</translation>
     </message>
     <message>
         <source>File deletion succeeded</source>
-        <translation>usuwanie pliku zakończone sukcesem</translation>
+        <translation>Удаление файлов завершено</translation>
     </message>
     <message>
         <source> Files</source>
-        <translation> Pliki</translation>
+        <translation> Файлов</translation>
     </message>
     <message>
         <source>Search file</source>
-        <translation>Wyszukaj plik</translation>
+        <translation>Поиск файлов</translation>
     </message>
     <message>
         <source>Documents</source>
-        <translation>Dokumenty</translation>
+        <translation>Документы</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Pobrane</translation>
+        <translation>Загрузки</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Muzyka</translation>
+        <translation>Музыка</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>Wideo</translation>
+        <translation>Видео</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Obrazy</translation>
+        <translation>Изображения</translation>
     </message>
 </context>
 <context>
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation>Ładuj URL</translation>
+        <translation>Загрузить URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation>Wprowadź URL tutaj</translation>
+        <translation>Введите URL</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
-        <translation>URL do pliku/transmisji multimediów</translation>
+        <translation>URL медиафайла/потока</translation>
     </message>
 </context>
 <context>
     <name>PermissionDialog</name>
     <message>
         <source>Could not change permission</source>
-        <translation>Nie można zmienić uprawnień</translation>
+        <translation>Невозможно изменить права доступа</translation>
     </message>
     <message>
         <source>Change Permissions</source>
-        <translation>Zmień uprawnienia</translation>
+        <translation>Изменить права</translation>
     </message>
     <message>
         <source>Change</source>
-        <translation>Zmień</translation>
+        <translation>Изменить</translation>
     </message>
     <message>
         <source>Change permissions for</source>
-        <translation>Zmień uprawnienia dla</translation>
+        <translation>Изменить права доступа для</translation>
     </message>
     <message>
         <source>Read</source>
-        <translation>Odczyt</translation>
+        <translation>Чтение</translation>
     </message>
     <message>
         <source>Write</source>
-        <translation>Zapis</translation>
+        <translation>Запись</translation>
     </message>
     <message>
         <source>Execute</source>
-        <translation>Wykonywanie</translation>
+        <translation>Запуск</translation>
     </message>
     <message>
         <source>Owner</source>
-        <translation>Właściciel</translation>
+        <translation>Владелец</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation>Grupa</translation>
+        <translation>Группа</translation>
     </message>
     <message>
         <source>Others</source>
-        <translation>Pozostali</translation>
+        <translation>Прочие</translation>
     </message>
 </context>
 <context>
     <name>PlacesPage</name>
     <message>
         <source>Documents</source>
-        <translation>Dokumenty</translation>
+        <translation>Документы</translation>
     </message>
     <message>
         <source>Downloads</source>
-        <translation>Pobrane</translation>
+        <translation>Загрузки</translation>
     </message>
     <message>
         <source>Music</source>
-        <translation>Muzyka</translation>
+        <translation>Музыка</translation>
     </message>
     <message>
         <source>Pictures</source>
-        <translation>Obrazy</translation>
+        <translation>Изображения</translation>
     </message>
     <message>
         <source>Videos</source>
-        <translation>Wideo</translation>
+        <translation>Видео</translation>
     </message>
     <message>
         <source>Device memory</source>
-        <translation>Pamięć urządzenia</translation>
+        <translation>Внутренняя память</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation>Karta SD</translation>
+        <translation>SD-карта</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation>katalog domowy</translation>
+        <translation>Домашний каталог</translation>
     </message>
     <message>
         <source>Android Storage</source>
-        <translation>Przestrzeń Androida</translation>
+        <translation>Хранилище Андроид</translation>
     </message>
     <message>
         <source>Places</source>
-        <translation>Miejsca</translation>
+        <translation>Места</translation>
     </message>
     <message>
         <source>Data</source>
-        <translation>Data</translation>
+        <translation>Данные</translation>
     </message>
     <message>
         <source>Devices</source>
-        <translation>Urządzenia</translation>
+        <translation>Устройства</translation>
     </message>
     <message>
         <source>Common</source>
-        <translation>Zwykłe</translation>
+        <translation>Общие</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Indywidualny</translation>
+        <translation>Пользовательские</translation>
     </message>
     <message>
         <source>Deleting </source>
-        <translation>Usuwanie</translation>
+        <translation>Удаление</translation>
     </message>
     <message>
         <source>Rename</source>
-        <translation>Zmień nazwę</translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Network Drives</source>
@@ -372,7 +372,7 @@
     </message>
     <message>
         <source>Opening...</source>
-        <translation>Otwieranie...</translation>
+        <translation>Открытие...</translation>
     </message>
     <message>
         <source>Storage Information</source>
@@ -383,15 +383,15 @@
     <name>RenameDialog</name>
     <message>
         <source>Rename</source>
-        <translation>Zmień nazwę</translation>
+        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Give a new name for</source>
-        <translation>Wpisz nazwę dla</translation>
+        <translation>Задать новое имя для</translation>
     </message>
     <message>
         <source>New name</source>
-        <translation>Nowa nazwa</translation>
+        <translation>Новое имя</translation>
     </message>
 </context>
 <context>
@@ -405,69 +405,64 @@
     <name>TextEditor</name>
     <message>
         <source>Save</source>
-        <translation>Zapisz</translation>
+        <translation>Сохранить</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayer</name>
     <message>
         <source>Open File</source>
-        <translation>Otwórz plik</translation>
+        <translation>Открыть файл</translation>
     </message>
     <message>
         <source>Open Stream</source>
-        <translation>Otwórz Strumień</translation>
+        <translation>Подключиться к потоку</translation>
     </message>
 </context>
 <context>
     <name>VideoPlayerComponent</name>
     <message>
         <source>Pull down to load file or stream</source>
-        <translation>Przeciągnij w dół aby załadować plik lub strumień</translation>
+        <translation>Потяните вниз, чтобы загрузить файл или поток</translation>
     </message>
     <message>
         <source>Dismiss</source>
-        <translation>Odrzuć</translation>
+        <translation>Закрыть</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to a problem allocating resources.
 On Youtube Videos please make sure to be logged in. Some videos might be geoblocked or require you to be logged into youtube.</source>
-        <translation>
-Nie można odtworzyć filmu z powodu problemu przydzielania zasobów.
-Na filmach z YouTube upewnij się, że jesteś zalogowany. Niektóre filmy wideo mogą być blokowane geograficznie lub wymagać zalogowania się na youtube.</translation>
+        <translation>Невозможно воспроизводить видео из-за проблем с выделением ресурсов.
+Убедитесь, что вы вошли в Youtube. Некоторые видеоролики могут иметь географические ограничения или требовать входа в систему youtube.</translation>
     </message>
     <message>
         <source>
 The audio and or video format is not supported.</source>
-        <translation>
-Format audio i/lub wideo nie jest obsługiwany.</translation>
+        <translation>Неизвестный формат аудио или видео.</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to network issues.</source>
-        <translation>
-Nie można odtworzyć filmu z powodu problemów z siecią.</translation>
+        <translation>Невозможно воспроизводить видео из-за проблем с сетью</translation>
     </message>
     <message>
         <source>
 The video cannot be played due to insufficient permissions.</source>
-        <translation>
-Nie można odtworzyć filmu z powodu niewystarczających uprawnień.</translation>
+        <translation>Невозможно воспроизводить видео, так как нет прав доступа.</translation>
     </message>
     <message>
         <source>
 The video cannot be played because the media service could not be instantiated.</source>
-        <translation>
-Nie można odtworzyć filmu, ponieważ nie można było zainicjować usługi multimedialnej.</translation>
+        <translation>Невозможно воспроизводить видео из-за проблем с запуском проигрывателя.</translation>
     </message>
     <message>
         <source>Zoomed to fit screen</source>
-        <translation>Powiększenie do rozmiaru okna</translation>
+        <translation>Подгонять к размеру экрана</translation>
     </message>
     <message>
         <source>Original</source>
-        <translation>Oryginalny</translation>
+        <translation>Исходный размер</translation>
     </message>
 </context>
 </TS>

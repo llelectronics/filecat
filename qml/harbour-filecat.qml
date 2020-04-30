@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Process 1.0
 import "pages"
 
 ApplicationWindow
@@ -19,6 +20,34 @@ ApplicationWindow
     property bool isLightTheme: {
         if (Theme.colorScheme == Theme.LightOnDark) return false
         else return true
+    }
+
+    Process {
+        id: process
+    }
+
+    ListModel {
+        id: clipboard
+//        ListElement {
+//            source: "path/to/filename"
+//              name: "filename"
+//        }
+        function add(path,name) {
+            if (!contains(path)) append({"source":path, "name": name});
+        }
+        function rm(path) {
+            for (var i=0; i<count; i++) {
+                if (get(i).source === path) remove(i);
+            }
+        }
+        function contains(path) {
+            for (var i=0; i<count; i++) {
+                if (get(i).source == path)  {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 
     function findBaseName(url) {
