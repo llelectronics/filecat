@@ -63,11 +63,11 @@
     </message>
     <message>
         <source>Select</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona</translation>
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Condividi</translation>
     </message>
 </context>
 <context>
@@ -129,7 +129,7 @@
     <name>ImageControls</name>
     <message>
         <source>Open externally</source>
-        <translation type="unfinished"></translation>
+        <translation>Apri in Galleria</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -140,7 +140,7 @@
     <name>MultiSelectBar</name>
     <message>
         <source>Deleting %1 files</source>
-        <translation type="unfinished"></translation>
+        <translation>Eliminazione %1 file</translation>
     </message>
 </context>
 <context>
@@ -207,19 +207,19 @@
     </message>
     <message>
         <source>Error deleting file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation>Errore durante l&apos;eliminazione dei file</translation>
     </message>
     <message>
         <source>File deletion succeeded</source>
-        <translation type="unfinished"></translation>
+        <translation>File eliminati</translation>
     </message>
     <message>
         <source> Files</source>
-        <translation type="unfinished"></translation>
+        <translation> file</translation>
     </message>
     <message>
         <source>Search file</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca file</translation>
     </message>
     <message>
         <source>Documents</source>
@@ -324,15 +324,15 @@
     </message>
     <message>
         <source>Device memory</source>
-        <translation type="unfinished"></translation>
+        <translation>Memoria dispositivo</translation>
     </message>
     <message>
         <source>SD Card</source>
-        <translation type="unfinished"></translation>
+        <translation>Scheda SD</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Home</translation>
     </message>
     <message>
         <source>Android Storage</source>
@@ -344,7 +344,7 @@
     </message>
     <message>
         <source>Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Dati</translation>
     </message>
     <message>
         <source>Devices</source>
@@ -368,7 +368,7 @@
     </message>
     <message>
         <source>Network Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Dischi di rete</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -376,7 +376,7 @@
     </message>
     <message>
         <source>Storage Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informazioni memoria</translation>
     </message>
 </context>
 <context>
@@ -398,7 +398,7 @@
     <name>SharePage</name>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Condividi</translation>
     </message>
 </context>
 <context>
