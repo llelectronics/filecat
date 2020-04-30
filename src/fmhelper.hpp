@@ -141,12 +141,13 @@ class FM : public QObject
                 QJsonArray blockDevArray = devObj.value(QString("blockdevices")).toArray();
                 //QJsonObject findValueFromJsonArray(QJsonArray arr, QString key, QString val) {
                 QJsonObject usbFindObj = findValueFromJsonArray(blockDevArray,"mountpoint", "/run/media/nemo");
-                if (!usbFindObj.isEmpty()) qWarning() << "Array not empty";
-                if (!usbFindObj.value("name").toString().contains("mmcblk1", Qt::CaseSensitivity::CaseInsensitive)) {
-                    if (!fatherNode.contains("mmcblk1")) {
-                        // Call signal to add usb stick to menu
-                        qWarning() << usbFindObj.value("mountpoint").toString();
-                        emit addUsbDeviceChanged(usbFindObj.value("name").toString(),usbFindObj.value("mountpoint").toString());
+                if (!usbFindObj.isEmpty()) {
+                    if (!usbFindObj.value("name").toString().contains("mmcblk1", Qt::CaseSensitivity::CaseInsensitive)) {
+                        if (!fatherNode.contains("mmcblk1")) {
+                            // Call signal to add usb stick to menu
+                            qWarning() << usbFindObj.value("mountpoint").toString();
+                            emit addUsbDeviceChanged(usbFindObj.value("name").toString(),usbFindObj.value("mountpoint").toString());
+                        }
                     }
                 }
             }
