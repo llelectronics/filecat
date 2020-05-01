@@ -132,7 +132,7 @@ class FM : public QObject
         void getUSBSticks()
         {
             QProcess lsblkProc;
-            QList<QString> list = {"-J"};
+            QList<QString> list = {"-J", "-o", "+LABEL"};
             lsblkProc.start(QString("/bin/lsblk"), list);
             if (lsblkProc.waitForFinished()) {
                 QByteArray lsblkOut = lsblkProc.readAll();
@@ -146,7 +146,11 @@ class FM : public QObject
                         if (!fatherNode.contains("mmcblk1")) {
                             // Call signal to add usb stick to menu
                             qWarning() << usbFindObj.value("mountpoint").toString();
-                            emit addUsbDeviceChanged(usbFindObj.value("name").toString(),usbFindObj.value("mountpoint").toString());
+                            if (!usbFindObj.value("label").isNull())
+                                // Something wrong here. I get no label with lsblk. Still leave it in here
+                                emit addUsbDeviceChanged(usbFindObj.value("label").toString(),usbFindObj.value("mountpoint").toString());
+                            else
+                                emit addUsbDeviceChanged(usbFindObj.value("name").toString(),usbFindObj.value("mountpoint").toString());
                         }
                     }
                 }
