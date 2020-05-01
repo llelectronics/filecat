@@ -123,9 +123,11 @@ Page {
     }
 
     function addUSBDevice(name,path) {
+        // Get the basename as long as lsblk cannot print label/partlabel
+        var usbName = mainWindow.findBaseName(path);
         devicesModel.push(
                     {
-                        name: name,
+                        name: usbName,
                         path: path,
                         icon: "image://theme/icon-m-usb"
                     }
