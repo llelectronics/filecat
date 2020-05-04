@@ -26,6 +26,7 @@ DISTFILES += qml/harbour-filecat.qml \
     qml/pages/fmComponents/SharePage.qml \
     qml/pages/fmComponents/TextEditor.qml \
     qml/pages/fmComponents/imageViewerComponents/ImageControls.qml \
+    qml/pages/fmComponents/iniParser.js \
     qml/pages/fmComponents/mimetypeIcons.js \
     rpm/harbour-filecat.changes.in \
     rpm/harbour-filecat.changes.run.in \

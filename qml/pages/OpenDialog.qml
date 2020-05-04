@@ -5,6 +5,7 @@ import Nemo.Configuration 1.0
 import Sailfish.Pickers 1.0
 import "fmComponents"
 import "fmComponents/imageViewerComponents"
+import "fmComponents/iniParser.js" as IniParser
 
 Page {
     id: page
@@ -322,6 +323,17 @@ Page {
         VerticalScrollDecorator { flickable: view }
     }
     Component.onCompleted: {
+        var directoryConfigFile = path + "/.directory"
+        if (_fm.isFile(directoryConfigFile)) {
+            var directoryIniFileData = IniParser.readIniFile(directoryConfigFile)
+            var directoryIniData = IniParser.parseINIString(directoryIniFileData)
+            var sortRole = directoryIniData['Dolphin']['SortRole']
+            console.debug(sortRole)
+            if (sortRole === "modificationtime") _sortField = FolderListModel.Time
+            else if (sortRole === "size") _sortField = FolderListModel.Size
+            else if (sortRole === "type") _sortField = FolderListModel.Type
+            else _sortField = FolderListModel.Name
+        }
         updateSortType()
     }
 
