@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>分享</translation>
     </message>
 </context>
 <context>
@@ -368,7 +368,7 @@
     </message>
     <message>
         <source>Network Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>网盘</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -376,7 +376,7 @@
     </message>
     <message>
         <source>Storage Information</source>
-        <translation type="unfinished"></translation>
+        <translation>存储信息</translation>
     </message>
 </context>
 <context>
@@ -398,7 +398,7 @@
     <name>SharePage</name>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation ></translation>
     </message>
 </context>
 <context>
