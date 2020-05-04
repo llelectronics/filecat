@@ -46,3 +46,11 @@ function readIniFile(file)
     rawFile.send(null);
     return allText;
 }
+
+function writeIniFile(file,data)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("PUT", file, true);
+    rawFile.setRequestHeader('Content-type','text/plain; charset=utf-8');
+    rawFile.send(data);
+}

@@ -42,6 +42,10 @@ Page {
 //       }
    ]
 
+    property string directoryConfigFile: path + "/.directory"
+    property string sortingIniData: "[Dolphin]
+SortRole="
+
     function openSearch() {
         pageStack.push(contentPickerPage)
     }
@@ -264,10 +268,26 @@ Page {
             MenuItem {
                 text: qsTr("Sort by: ") + sortType
                 onClicked: {
-                    if (_sortField === FolderListModel.Name) _sortField = FolderListModel.Time
-                    else if (_sortField === FolderListModel.Time) _sortField = FolderListModel.Size
-                    else if (_sortField === FolderListModel.Size) _sortField = FolderListModel.Type
-                    else if (_sortField === FolderListModel.Type) _sortField = FolderListModel.Name
+                    if (_sortField === FolderListModel.Name) {
+                        _sortField = FolderListModel.Time
+                        sortType = sortingIniData + "modificationtime"
+                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                    }
+                    else if (_sortField === FolderListModel.Time) {
+                        _sortField = FolderListModel.Size
+                        sortType = sortingIniData + "size"
+                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                    }
+                    else if (_sortField === FolderListModel.Size) {
+                        _sortField = FolderListModel.Type
+                        sortType = sortingIniData + "type"
+                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                    }
+                    else if (_sortField === FolderListModel.Type) {
+                        _sortField = FolderListModel.Name
+                        sortType = "[Dolphin]"
+                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                    }
                     updateSortType();
                 }
             }
@@ -323,7 +343,6 @@ Page {
         VerticalScrollDecorator { flickable: view }
     }
     Component.onCompleted: {
-        var directoryConfigFile = path + "/.directory"
         if (_fm.isFile(directoryConfigFile)) {
             var directoryIniFileData = IniParser.readIniFile(directoryConfigFile)
             var directoryIniData = IniParser.parseINIString(directoryIniFileData)
