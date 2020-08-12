@@ -398,7 +398,7 @@
     <name>SharePage</name>
     <message>
         <source>Share</source>
-        <translation ></translation>
+        <translation></translation>
     </message>
 </context>
 <context>

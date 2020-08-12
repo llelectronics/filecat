@@ -80,6 +80,10 @@ SortRole="
         }
     }
 
+    onHiddenShowChanged: {
+        updateHiddenShow();
+    }
+
     function refresh() {
         var oPath = path
         path = ""
@@ -123,6 +127,18 @@ SortRole="
         var customPlacesJson = JSON.stringify(customPlaces);
         //console.debug(customPlacesJson);
         customPlacesSettings.setValue("places",customPlacesJson);
+    }
+
+    function saveConfiguration() {
+        // Write directories INI File here
+        var iniData = sortingIniData
+        iniData += "
+
+"
+        iniData += "[Settings]
+HiddenFilesShown="
+        iniData += hiddenShow.toString()
+        IniParser.writeIniFile(directoryConfigFile, iniData)
     }
 
     FolderListModel {
@@ -191,6 +207,22 @@ SortRole="
         else if (_sortField === FolderListModel.Type) sortType = qsTr("Type")
     }
 
+    function updateHiddenShow() {
+        if (hiddenShow) {
+            view.visible = false
+            view.model = fileModelHidden
+            view.model.showHidden = true
+            view.visible = true
+        }
+        else {
+            view.visible = false
+            view.model = fileModel
+            view.model.showHidden = false
+            view.visible = true
+        }
+        showHiddenIndicator.start()
+    }
+
     SilicaListView {
         id: view
         model: fileModel
@@ -203,16 +235,8 @@ SortRole="
             MouseArea {
                 anchors.fill: parent
                 onClicked: {
-                    if (!hiddenShow) {
-                        view.model = fileModelHidden
-                        view.model.showHidden = true
-                    }
-                    else {
-                        view.model = fileModel
-                        view.model.showHidden = false
-                    }
                     hiddenShow = !hiddenShow
-                    showHiddenIndicator.start()
+                    saveConfiguration();
                 }
                 onPressAndHold: {
                     mainWindow.lastKnownDir = fileModel.folder
@@ -270,25 +294,23 @@ SortRole="
                 onClicked: {
                     if (_sortField === FolderListModel.Name) {
                         _sortField = FolderListModel.Time
-                        sortType = sortingIniData + "modificationtime"
-                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                        sortingIniData += "modificationtime"
                     }
                     else if (_sortField === FolderListModel.Time) {
                         _sortField = FolderListModel.Size
-                        sortType = sortingIniData + "size"
-                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                        sortingIniData += sortingIniData + "size"
                     }
                     else if (_sortField === FolderListModel.Size) {
                         _sortField = FolderListModel.Type
-                        sortType = sortingIniData + "type"
-                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                        sortingIniData += sortingIniData + "type"
                     }
                     else if (_sortField === FolderListModel.Type) {
                         _sortField = FolderListModel.Name
-                        sortType = "[Dolphin]"
-                        IniParser.writeIniFile(directoryConfigFile, sortType)
+                        sortingIniData = "[Dolphin]
+SortRole="
                     }
                     updateSortType();
+                    saveConfiguration();
                 }
             }
             MenuItem {
@@ -348,10 +370,25 @@ SortRole="
             var directoryIniData = IniParser.parseINIString(directoryIniFileData)
             var sortRole = directoryIniData['Dolphin']['SortRole']
             console.debug(sortRole)
-            if (sortRole === "modificationtime") _sortField = FolderListModel.Time
-            else if (sortRole === "size") _sortField = FolderListModel.Size
-            else if (sortRole === "type") _sortField = FolderListModel.Type
-            else _sortField = FolderListModel.Name
+            if (sortRole === "modificationtime") {
+                _sortField = FolderListModel.Time
+                sortingIniData += "modificationtime"
+            }
+            else if (sortRole === "size") {
+                _sortField = FolderListModel.Size
+                sortingIniData += "size"
+            }
+            else if (sortRole === "type") {
+                _sortField = FolderListModel.Type
+                sortingIniData += "type"
+            }
+            else {
+                _sortField = FolderListModel.Name
+            }
+            var showHiddenFiles = directoryIniData['Settings']['HiddenFilesShown']
+            console.debug("Show Hidden Files:" + showHiddenFiles)
+            if (showHiddenFiles === "true") hiddenShow = true
+            else hiddenShow = false
         }
         updateSortType()
     }
