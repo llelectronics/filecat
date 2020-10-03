@@ -220,6 +220,7 @@ HiddenFilesShown="
             view.model.showHidden = false
             view.visible = true
         }
+        view.forceLayout()
         showHiddenIndicator.start()
     }
 
