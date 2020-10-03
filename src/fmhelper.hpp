@@ -107,15 +107,26 @@ class FM : public QObject
             QList<QString> list = {"-J", "/dev/mmcblk1"};
             lsblkProc.start(QString("/bin/lsblk"), list);
             if (lsblkProc.waitForFinished()) {
+                // Test string
+                //QString foo = "{\"blockdevices\": [{\"name\":\"mmcblk1\", \"maj:min\":\"179:64\", \"rm\":false, \"size\":\"119.1G\", \"ro\":false, \"type\":\"disk\", \"mountpoint\":\"/run/media/nemo/104C-748D\"}]}";
+                //QByteArray lsblkOut = foo.toUtf8();
                 QByteArray lsblkOut = lsblkProc.readAll();
                 //qWarning() << lsblkOut;
                 QJsonDocument d = QJsonDocument::fromJson(lsblkOut);
                 QJsonObject devObj = d.object();
+                qWarning() << "devObj.keys = " << devObj.keys();
                 QJsonArray blockDevArray = devObj.value(QString("blockdevices")).toArray();
                 QJsonObject blockArrayObject = blockDevArray.first().toObject();
+                qWarning() << "blockArrayObject.keys = " << blockArrayObject.keys();
+                if (!QJsonValue(blockArrayObject.value("mountpoint")).isNull()) {
+                    qWarning() << "Found microSD card with mountpoint " << blockArrayObject.value("mountpoint").toString();
+                    return blockArrayObject.value("mountpoint").toString();
+                }
                 QJsonArray blockPartArray = blockArrayObject.value(QString("children")).toArray();
                 QJsonObject blockPartObject = blockPartArray.first().toObject();
+                qWarning() << "blockPartObject.keys = " << blockPartObject.keys();
                 if (!QJsonValue(blockPartObject.value("mountpoint")).isNull()) {
+                    qWarning() << "Found microSD card with mountpoint " << blockPartObject.value("mountpoint").toString();
                     return blockPartObject.value("mountpoint").toString();
                 }
                 else if (QJsonValue(blockPartObject.value("children")).isArray()) {
