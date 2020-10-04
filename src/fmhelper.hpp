@@ -114,19 +114,19 @@ class FM : public QObject
                 //qWarning() << lsblkOut;
                 QJsonDocument d = QJsonDocument::fromJson(lsblkOut);
                 QJsonObject devObj = d.object();
-                qWarning() << "devObj.keys = " << devObj.keys();
+                //qWarning() << "devObj.keys = " << devObj.keys();
                 QJsonArray blockDevArray = devObj.value(QString("blockdevices")).toArray();
                 QJsonObject blockArrayObject = blockDevArray.first().toObject();
-                qWarning() << "blockArrayObject.keys = " << blockArrayObject.keys();
+                //qWarning() << "blockArrayObject.keys = " << blockArrayObject.keys();
                 if (!QJsonValue(blockArrayObject.value("mountpoint")).isNull()) {
-                    qWarning() << "Found microSD card with mountpoint " << blockArrayObject.value("mountpoint").toString();
+                    //qWarning() << "Found microSD card with mountpoint " << blockArrayObject.value("mountpoint").toString();
                     return blockArrayObject.value("mountpoint").toString();
                 }
                 QJsonArray blockPartArray = blockArrayObject.value(QString("children")).toArray();
                 QJsonObject blockPartObject = blockPartArray.first().toObject();
-                qWarning() << "blockPartObject.keys = " << blockPartObject.keys();
+                //qWarning() << "blockPartObject.keys = " << blockPartObject.keys();
                 if (!QJsonValue(blockPartObject.value("mountpoint")).isNull()) {
-                    qWarning() << "Found microSD card with mountpoint " << blockPartObject.value("mountpoint").toString();
+                    //qWarning() << "Found microSD card with mountpoint " << blockPartObject.value("mountpoint").toString();
                     return blockPartObject.value("mountpoint").toString();
                 }
                 else if (QJsonValue(blockPartObject.value("children")).isArray()) {
