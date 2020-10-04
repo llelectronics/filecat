@@ -246,11 +246,11 @@
     <name>OpenURLPage</name>
     <message>
         <source>Load URL</source>
-        <translation>加载 URL</translation>
+        <translation>加载URL</translation>
     </message>
     <message>
         <source>Type in URL here</source>
-        <translation>在此输入 URL</translation>
+        <translation>在此输入URL</translation>
     </message>
     <message>
         <source>URL to media file/stream</source>
@@ -398,7 +398,7 @@
     <name>SharePage</name>
     <message>
         <source>Share</source>
-        <translation></translation>
+        <translation>分享</translation>
     </message>
 </context>
 <context>
