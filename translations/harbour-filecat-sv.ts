@@ -67,7 +67,7 @@
     </message>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Dela</translation>
     </message>
 </context>
 <context>
@@ -368,7 +368,7 @@
     </message>
     <message>
         <source>Network Drives</source>
-        <translation type="unfinished"></translation>
+        <translation>Nätverksdiskar</translation>
     </message>
     <message>
         <source>Opening...</source>
@@ -376,7 +376,7 @@
     </message>
     <message>
         <source>Storage Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagringsinformation</translation>
     </message>
 </context>
 <context>
@@ -398,7 +398,7 @@
     <name>SharePage</name>
     <message>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Dela</translation>
     </message>
 </context>
 <context>
